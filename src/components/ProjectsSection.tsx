@@ -3,25 +3,18 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform with product management, cart functionality, and payment integration. Built with a modern tech stack for performance and scalability.",
-    tech: ["React", "TypeScript", "Node.js", "PostgreSQL"],
-    github: "#",
+    title: "E-Library",
+    description: "A digital library application for browsing, searching, and managing books online. Features a clean interface for an intuitive reading and discovery experience.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/Panther0508/E-library",
     live: "#",
   },
   {
-    title: "Task Management API",
-    description: "A RESTful API for task management with authentication, role-based access, and real-time updates via WebSockets. Designed with clean architecture principles.",
-    tech: ["Node.js", "Express", "MongoDB", "JWT"],
+    title: "Zerve API Notebook",
+    description: "An API notebook built on the Zerve platform for data exploration, API development, and interactive code execution in the cloud.",
+    tech: ["Python", "API", "Zerve", "Data Science"],
     github: "#",
-    live: "#",
-  },
-  {
-    title: "Developer Dashboard",
-    description: "An analytics dashboard for monitoring API performance metrics, error rates, and usage statistics with interactive charts and real-time data.",
-    tech: ["React", "Tailwind CSS", "Recharts", "REST API"],
-    github: "#",
-    live: "#",
+    live: "https://app.zerve.ai/notebook/67aee2b8-045d-4f51-bd59-e54118a84daa?session_id=3df49dfe-ff30-4395-b106-6dbc1327ae78",
   },
 ];
 
