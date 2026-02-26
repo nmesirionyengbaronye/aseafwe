@@ -1,20 +1,11 @@
 import { motion } from "framer-motion";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const skills = [
   { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML/CSS", "Framer Motion"] },
   { category: "API & Backend", items: ["Node.js", "Express", "REST APIs", "GraphQL", "PostgreSQL", "MongoDB"] },
   { category: "Tools & DevOps", items: ["Git", "Docker", "CI/CD", "Vite", "Figma", "Postman"] },
 ];
-
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.15 } },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
 
 const SkillsSection = () => (
   <section id="skills" className="py-24 px-6 md:px-12 lg:px-24 max-w-5xl mx-auto">
@@ -32,30 +23,39 @@ const SkillsSection = () => (
     </motion.div>
 
     <motion.div
-      variants={container}
-      initial="hidden"
-      whileInView="show"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      className="grid md:grid-cols-3 gap-6"
+      transition={{ duration: 0.5 }}
     >
-      {skills.map((group) => (
-        <motion.div
-          key={group.category}
-          variants={item}
-          className="rounded-lg p-6 border border-border bg-card hover:border-primary/40 transition-colors"
-          style={{ background: "var(--gradient-card)" }}
-        >
-          <h3 className="font-mono text-primary text-sm mb-4">{group.category}</h3>
-          <ul className="space-y-2">
-            {group.items.map((skill) => (
-              <li key={skill} className="flex items-center gap-2 text-muted-foreground text-sm">
-                <span className="text-primary text-xs">▹</span>
-                {skill}
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      ))}
+      <Tabs defaultValue="Frontend" className="w-full">
+        <TabsList className="bg-muted/50 border border-border mb-8">
+          {skills.map((group) => (
+            <TabsTrigger
+              key={group.category}
+              value={group.category}
+              className="font-mono text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+            >
+              {group.category}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+
+        {skills.map((group) => (
+          <TabsContent key={group.category} value={group.category}>
+            <div className="rounded-lg p-6 border border-border bg-card" style={{ background: "var(--gradient-card)" }}>
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {group.items.map((skill) => (
+                  <li key={skill} className="flex items-center gap-2 text-muted-foreground text-sm">
+                    <span className="text-primary text-xs">▹</span>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </TabsContent>
+        ))}
+      </Tabs>
     </motion.div>
   </section>
 );
