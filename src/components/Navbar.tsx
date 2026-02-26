@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import profileImg from "@/assets/profile.jpg";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -15,8 +16,14 @@ const Navbar = () => (
     transition={{ duration: 0.6 }}
     className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-background/80 backdrop-blur-md border-b border-border"
   >
-    <a href="#" className="font-mono text-primary text-sm font-bold tracking-wider">
-      NN<span className="text-muted-foreground">.</span>
+    <a href="#" className="flex items-center gap-2">
+      <Avatar className="h-8 w-8">
+        <AvatarImage src={profileImg} alt="Ngbaronye Nmesirionye" />
+        <AvatarFallback>NN</AvatarFallback>
+      </Avatar>
+      <span className="font-mono text-primary text-sm font-bold tracking-wider">
+        Ngbaronye N<span className="hidden sm:inline">mesirionye</span><span className="text-muted-foreground">.</span>
+      </span>
     </a>
     <div className="flex items-center gap-6">
       {navLinks.map((link) => (
