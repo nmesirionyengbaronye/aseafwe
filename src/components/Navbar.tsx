@@ -14,7 +14,7 @@ const Navbar = () => (
     initial={{ y: -40, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.6 }}
-    className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-background/80 backdrop-blur-md border-b border-border"
+    className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 bg-background/60 backdrop-blur-md border-b border-border"
   >
     <a href="#" className="flex items-center gap-2">
       <Avatar className="h-8 w-8">
