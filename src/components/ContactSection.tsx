@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, Github, Twitter } from "lucide-react";
+import { Mail, MessageCircle, Github, Twitter, Send } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const contacts = [
-  { label: "Email", icon: Mail, value: "nmesirionyengbaronye@gmail.com", href: "mailto:nmesirionyengbaronye@gmail.com" },
-  { label: "Phone", icon: Phone, value: "07040369525", href: "tel:07040369525" },
-  { label: "GitHub", icon: Github, value: "Panther0508", href: "https://github.com/Panther0508" },
-  { label: "X", icon: Twitter, value: "@Pantherlord0508", href: "https://x.com/Pantherlord0508" },
+  { label: "Email", icon: Mail, value: "nmesirionyengbaronye@gmail.com", href: "mailto:nmesirionyengbaronye@gmail.com", cta: "Send Email" },
+  { label: "WhatsApp", icon: MessageCircle, value: "07040369525", href: "https://wa.me/2347040369525", cta: "Chat on WhatsApp" },
+  { label: "Telegram", icon: Send, value: "07040369525", href: "https://t.me/+2347040369525", cta: "Chat on Telegram" },
+  { label: "GitHub", icon: Github, value: "Panther0508", href: "https://github.com/Panther0508", cta: "Visit GitHub" },
+  { label: "X", icon: Twitter, value: "@Pantherlord0508", href: "https://x.com/Pantherlord0508", cta: "Visit X" },
 ];
 
 const ContactSection = () => (
@@ -25,7 +26,7 @@ const ContactSection = () => (
       </p>
 
       <Tabs defaultValue="Email" className="w-full">
-        <TabsList className="bg-muted/50 border border-border mb-6">
+        <TabsList className="bg-muted/50 border border-border mb-6 flex-wrap h-auto gap-1 p-1">
           {contacts.map((c) => (
             <TabsTrigger
               key={c.label}
@@ -48,7 +49,7 @@ const ContactSection = () => (
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-6 py-3 rounded hover:bg-primary/10 transition-colors"
               >
-                {c.label === "Email" ? "Send Email" : c.label === "Phone" ? "Call Me" : `Visit ${c.label}`}
+                {c.cta}
               </a>
             </div>
           </TabsContent>

@@ -6,22 +6,22 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
+    --background: 230 25% 3%;
     --foreground: 0 0% 95%;
 
-    --card: 0 0% 8%;
+    --card: 230 20% 7%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 8%;
+    --popover: 230 20% 7%;
     --popover-foreground: 0 0% 95%;
 
     --primary: 45 90% 55%;
     --primary-foreground: 0 0% 4%;
 
-    --secondary: 0 0% 12%;
+    --secondary: 230 15% 12%;
     --secondary-foreground: 0 0% 80%;
 
-    --muted: 0 0% 14%;
+    --muted: 230 15% 14%;
     --muted-foreground: 30 5% 45%;
 
     --accent: 45 90% 55%;
@@ -30,26 +30,26 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 40 10% 16%;
-    --input: 40 10% 16%;
+    --border: 230 15% 14%;
+    --input: 230 15% 14%;
     --ring: 45 90% 55%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 8%;
+    --sidebar-background: 230 20% 7%;
     --sidebar-foreground: 0 0% 80%;
     --sidebar-primary: 45 90% 55%;
     --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent: 230 15% 14%;
     --sidebar-accent-foreground: 0 0% 80%;
-    --sidebar-border: 40 10% 16%;
+    --sidebar-border: 230 15% 14%;
     --sidebar-ring: 45 90% 55%;
 
     --font-display: 'Space Grotesk', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    --gradient-hero: linear-gradient(135deg, hsl(45 90% 55% / 0.1), hsl(0 0% 4%) 60%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 10%), hsl(0 0% 6%));
+    --gradient-hero: radial-gradient(ellipse at 20% 50%, hsl(230 40% 12%) 0%, hsl(230 25% 3%) 60%);
+    --gradient-card: linear-gradient(145deg, hsl(230 20% 9%), hsl(230 20% 5%));
     --shadow-glow: 0 0 30px hsl(45 90% 55% / 0.15);
   }
 }
@@ -62,6 +62,19 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-display);
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, hsl(0 0% 100% / 0.15), transparent),
+      radial-gradient(1px 1px at 30% 65%, hsl(0 0% 100% / 0.1), transparent),
+      radial-gradient(1px 1px at 55% 15%, hsl(0 0% 100% / 0.12), transparent),
+      radial-gradient(1px 1px at 70% 80%, hsl(0 0% 100% / 0.08), transparent),
+      radial-gradient(1px 1px at 85% 40%, hsl(0 0% 100% / 0.15), transparent),
+      radial-gradient(1px 1px at 95% 90%, hsl(0 0% 100% / 0.1), transparent),
+      radial-gradient(1px 1px at 15% 85%, hsl(0 0% 100% / 0.12), transparent),
+      radial-gradient(1px 1px at 45% 45%, hsl(0 0% 100% / 0.08), transparent),
+      radial-gradient(1.5px 1.5px at 25% 35%, hsl(45 90% 55% / 0.1), transparent),
+      radial-gradient(1.5px 1.5px at 75% 55%, hsl(45 90% 55% / 0.08), transparent);
+    background-size: 200px 200px, 300px 300px, 250px 250px, 350px 350px, 180px 180px, 280px 280px, 320px 320px, 220px 220px, 400px 400px, 360px 360px;
+    background-color: hsl(230 25% 3%);
   }
 
   h1, h2, h3, h4, h5, h6 {
