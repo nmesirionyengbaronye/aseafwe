@@ -9,7 +9,7 @@ const projects = [
     description: "A digital library application for browsing, searching, and managing books online. Features a clean interface for an intuitive reading and discovery experience.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/Panther0508/E-library",
-    live: "#",
+    live: "https://e-library-panther0508.pxxl.click",
     image: elibraryImg,
   },
   {
@@ -73,10 +73,10 @@ const ProjectsSection = () => (
                 {project.title}
               </h3>
               <div className="flex gap-3">
-                <a href={project.github} className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <Github size={18} />
                 </a>
-                <a href={project.live} className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={project.live} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <ExternalLink size={18} />
                 </a>
               </div>
