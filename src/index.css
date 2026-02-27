@@ -60,21 +60,9 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-family: var(--font-display);
-    background-image:
-      radial-gradient(1px 1px at 10% 20%, hsl(0 0% 100% / 0.15), transparent),
-      radial-gradient(1px 1px at 30% 65%, hsl(0 0% 100% / 0.1), transparent),
-      radial-gradient(1px 1px at 55% 15%, hsl(0 0% 100% / 0.12), transparent),
-      radial-gradient(1px 1px at 70% 80%, hsl(0 0% 100% / 0.08), transparent),
-      radial-gradient(1px 1px at 85% 40%, hsl(0 0% 100% / 0.15), transparent),
-      radial-gradient(1px 1px at 95% 90%, hsl(0 0% 100% / 0.1), transparent),
-      radial-gradient(1px 1px at 15% 85%, hsl(0 0% 100% / 0.12), transparent),
-      radial-gradient(1px 1px at 45% 45%, hsl(0 0% 100% / 0.08), transparent),
-      radial-gradient(1.5px 1.5px at 25% 35%, hsl(45 90% 55% / 0.1), transparent),
-      radial-gradient(1.5px 1.5px at 75% 55%, hsl(45 90% 55% / 0.08), transparent);
-    background-size: 200px 200px, 300px 300px, 250px 250px, 350px 350px, 180px 180px, 280px 280px, 320px 320px, 220px 220px, 400px 400px, 360px 360px;
-    background-color: hsl(230 25% 3%);
+    background: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
