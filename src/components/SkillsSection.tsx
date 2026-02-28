@@ -1,12 +1,22 @@
 import { motion } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Monitor, Server, Wrench, Bot } from "lucide-react";
 
 const skills = [
-  { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML/CSS", "Framer Motion"] },
-  { category: "API & Backend", items: ["Node.js", "Express", "REST APIs", "GraphQL", "PostgreSQL", "MongoDB"] },
-  { category: "Tools & DevOps", items: ["Git", "Docker", "CI/CD", "Vite", "Figma", "Postman"] },
-  { category: "Robotics", items: ["Arduino", "Raspberry Pi", "Embedded C", "Sensors & Actuators", "PCB Design", "3D Printing"] },
+  { category: "Frontend", icon: Monitor, items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML/CSS", "Framer Motion"] },
+  { category: "API & Backend", icon: Server, items: ["Node.js", "Express", "REST APIs", "GraphQL", "PostgreSQL", "MongoDB"] },
+  { category: "Tools & DevOps", icon: Wrench, items: ["Git", "Docker", "CI/CD", "Vite", "Figma", "Postman"] },
+  { category: "Robotics", icon: Bot, items: ["Arduino", "Raspberry Pi", "Embedded C", "Sensors & Actuators", "PCB Design", "3D Printing"] },
 ];
+
+const skillItem = {
+  hidden: { opacity: 0, x: -10 },
+  show: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { delay: i * 0.05, duration: 0.3 },
+  }),
+};
 
 const SkillsSection = () => (
   <section id="skills" className="py-24 px-6 md:px-12 lg:px-24 max-w-5xl mx-auto">
@@ -35,9 +45,10 @@ const SkillsSection = () => (
             <TabsTrigger
               key={group.category}
               value={group.category}
-              className="font-mono text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="font-mono text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground gap-1.5"
             >
-              {group.category}
+              <group.icon size={14} />
+              <span className="hidden sm:inline">{group.category}</span>
             </TabsTrigger>
           ))}
         </TabsList>
@@ -45,12 +56,25 @@ const SkillsSection = () => (
         {skills.map((group) => (
           <TabsContent key={group.category} value={group.category}>
             <div className="rounded-lg p-6 border border-border bg-card" style={{ background: "var(--gradient-card)" }}>
+              <div className="flex items-center gap-2 mb-4">
+                <group.icon size={18} className="text-primary" />
+                <h3 className="font-mono text-sm text-foreground font-medium">{group.category}</h3>
+              </div>
               <ul className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {group.items.map((skill) => (
-                  <li key={skill} className="flex items-center gap-2 text-muted-foreground text-sm">
+                {group.items.map((skill, i) => (
+                  <motion.li
+                    key={skill}
+                    custom={i}
+                    variants={skillItem}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    whileHover={{ x: 4 }}
+                    className="flex items-center gap-2 text-muted-foreground text-sm p-2 rounded hover:bg-primary/5 transition-colors cursor-default"
+                  >
                     <span className="text-primary text-xs">▹</span>
                     {skill}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
