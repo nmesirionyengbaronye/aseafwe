@@ -9,7 +9,7 @@ const projects = [
     description: "A digital library application for browsing, searching, and managing books online. Features a clean interface for an intuitive reading and discovery experience.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/Panther0508/E-library",
-    live: "https://e-library-panther0508.pxxl.click",
+    live: "https://e-library-panther0508.vercel.app",
     image: elibraryImg,
   },
   {
