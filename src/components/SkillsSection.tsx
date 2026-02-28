@@ -5,6 +5,7 @@ const skills = [
   { category: "Frontend", items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML/CSS", "Framer Motion"] },
   { category: "API & Backend", items: ["Node.js", "Express", "REST APIs", "GraphQL", "PostgreSQL", "MongoDB"] },
   { category: "Tools & DevOps", items: ["Git", "Docker", "CI/CD", "Vite", "Figma", "Postman"] },
+  { category: "Robotics", items: ["Arduino", "Raspberry Pi", "Embedded C", "Sensors & Actuators", "PCB Design", "3D Printing"] },
 ];
 
 const SkillsSection = () => (

@@ -13,6 +13,7 @@ const roles = [
   "Frontend Developer",
   "API Engineer",
   "UI/UX Enthusiast",
+  "Robotics Enthusiast",
   "Open Source Contributor",
 ];
 
@@ -36,7 +37,7 @@ PROFILE
 
 EDUCATION
   Federal University of Technology, Owerri (FUTO)
-  B.Tech Computer Science (In Progress)
+  B.Eng Mechatronics Engineering (In Progress)
 
 SKILLS
   Frontend: React, TypeScript, Tailwind CSS, Next.js, HTML/CSS, Framer Motion
@@ -56,7 +57,7 @@ PROJECTS
     Tech: Python, API, Zerve, Data Science
 
 INTERESTS
-  Open-source contribution, system design, cloud architecture, new technologies
+  Robotics, open-source contribution, system design, cloud architecture, new technologies
   `;
   const blob = new Blob([cvContent], { type: "text/plain" });
   const url = URL.createObjectURL(blob);
@@ -203,7 +204,7 @@ const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="text-muted-foreground text-lg max-w-xl mt-6 leading-relaxed"
           >
-            A Computer Science student at Federal University of Technology Owerri
+            A Mechatronics Engineering student at Federal University of Technology Owerri
             with 2+ years of experience crafting exceptional digital experiences.
             I build accessible, performant, and beautifully designed web apps & robust APIs.
           </motion.p>
