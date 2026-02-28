@@ -3,7 +3,7 @@ import profileImg from "@/assets/profile.jpg";
 
 const highlights = [
   { label: "Experience", value: "2+ Years" },
-  { label: "University", value: "FUTO" },
+  { label: "University", value: "FUTO (Mechatronics)" },
   { label: "Location", value: "Nigeria" },
   { label: "Origin", value: "Umuahia, Abia" },
 ];
@@ -25,7 +25,7 @@ const AboutSection = () => (
       <div className="flex flex-col md:flex-row gap-10 items-start">
         <div className="text-muted-foreground leading-relaxed space-y-4 text-base flex-1">
           <p>
-            Hello! I'm Ngbaronye Nmesirionye, a passionate developer and Computer Science student at the
+            Hello! I'm Ngbaronye Nmesirionye, a passionate developer and Mechatronics Engineering student at the
             <span className="text-primary font-medium"> Federal University of Technology, Owerri (FUTO)</span>.
             Originally from <span className="text-primary font-medium">Umuahia, Abia State, Nigeria</span>,
             I've spent the last 2+ years honing my skills in frontend development and API engineering.
@@ -36,7 +36,7 @@ const AboutSection = () => (
           </p>
           <p>
             When I'm not coding, you can find me exploring new technologies, contributing to open-source,
-            or learning about system design and cloud architecture.
+            tinkering with robotics projects, or learning about system design and cloud architecture.
           </p>
 
           <div className="grid grid-cols-2 gap-3 pt-4">
