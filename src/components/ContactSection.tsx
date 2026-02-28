@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Github, Twitter, Send } from "lucide-react";
+import { Mail, MessageCircle, Github, Twitter, Send, Sparkles } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const contacts = [
@@ -18,6 +18,17 @@ const ContactSection = () => (
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
     >
+      <motion.div
+        initial={{ scale: 0 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, type: "spring" }}
+        className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-6"
+      >
+        <Sparkles size={14} className="text-primary" />
+        <span className="font-mono text-xs text-primary">Available for work</span>
+      </motion.div>
+
       <p className="font-mono text-primary text-sm mb-4">04. What's Next?</p>
       <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">Get In Touch</h2>
       <p className="text-muted-foreground leading-relaxed mb-10">
@@ -31,8 +42,9 @@ const ContactSection = () => (
             <TabsTrigger
               key={c.label}
               value={c.label}
-              className="font-mono text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="font-mono text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground gap-1.5"
             >
+              <c.icon size={12} />
               {c.label}
             </TabsTrigger>
           ))}
@@ -40,8 +52,15 @@ const ContactSection = () => (
 
         {contacts.map((c) => (
           <TabsContent key={c.label} value={c.label}>
-            <div className="rounded-lg p-8 border border-border bg-card flex flex-col items-center gap-4" style={{ background: "var(--gradient-card)" }}>
-              <c.icon size={28} className="text-primary" />
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="rounded-lg p-8 border border-border bg-card flex flex-col items-center gap-4 hover:border-primary/30 hover:shadow-[var(--shadow-glow)] transition-all"
+              style={{ background: "var(--gradient-card)" }}
+            >
+              <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                <c.icon size={24} className="text-primary" />
+              </div>
               <p className="font-mono text-foreground text-sm">{c.value}</p>
               <a
                 href={c.href}
@@ -51,7 +70,7 @@ const ContactSection = () => (
               >
                 {c.cta}
               </a>
-            </div>
+            </motion.div>
           </TabsContent>
         ))}
       </Tabs>

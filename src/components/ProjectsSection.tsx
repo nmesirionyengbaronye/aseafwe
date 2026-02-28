@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Folder } from "lucide-react";
 import elibraryImg from "@/assets/project-elibrary.jpg";
 import zerveImg from "@/assets/project-zerve.jpg";
 
@@ -11,6 +11,7 @@ const projects = [
     github: "https://github.com/Panther0508/E-library",
     live: "https://e-library-panther0508.vercel.app",
     image: elibraryImg,
+    featured: true,
   },
   {
     title: "Zerve API Notebook",
@@ -19,6 +20,7 @@ const projects = [
     github: "#",
     live: "https://app.zerve.ai/notebook/67aee2b8-045d-4f51-bd59-e54118a84daa?session_id=3df49dfe-ff30-4395-b106-6dbc1327ae78",
     image: zerveImg,
+    featured: true,
   },
 ];
 
@@ -58,25 +60,37 @@ const ProjectsSection = () => (
         <motion.div
           key={project.title}
           variants={item}
-          className="group rounded-lg overflow-hidden border border-border bg-card hover:border-primary/40 transition-all hover:shadow-[var(--shadow-glow)]"
+          whileHover={{ y: -4 }}
+          className="group rounded-lg overflow-hidden border border-border bg-card hover:border-primary/40 transition-all duration-300 hover:shadow-[var(--shadow-glow)]"
           style={{ background: "var(--gradient-card)" }}
         >
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-48 md:h-56 object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-            loading="lazy"
-          />
+          <div className="relative overflow-hidden">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-48 md:h-56 object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+            {project.featured && (
+              <span className="absolute top-4 left-4 font-mono text-xs text-primary bg-primary/10 border border-primary/30 px-3 py-1 rounded-full backdrop-blur-sm">
+                Featured
+              </span>
+            )}
+          </div>
           <div className="p-6 md:p-8">
             <div className="flex items-start justify-between mb-4">
-              <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
+              <div className="flex items-center gap-2">
+                <Folder size={18} className="text-primary/60" />
+                <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+              </div>
               <div className="flex gap-3">
-                <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all">
                   <Github size={18} />
                 </a>
-                <a href={project.live} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href={project.live} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all">
                   <ExternalLink size={18} />
                 </a>
               </div>
@@ -84,7 +98,7 @@ const ProjectsSection = () => (
             <p className="text-muted-foreground text-sm leading-relaxed mb-5">{project.description}</p>
             <div className="flex flex-wrap gap-2">
               {project.tech.map((t) => (
-                <span key={t} className="font-mono text-xs text-primary/80 bg-primary/10 px-3 py-1 rounded-full">
+                <span key={t} className="font-mono text-xs text-primary/80 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
                   {t}
                 </span>
               ))}

@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import profileImg from "@/assets/profile.jpg";
+import { Code2, Cpu, Globe, Rocket } from "lucide-react";
 
 const highlights = [
-  { label: "Experience", value: "2+ Years" },
-  { label: "University", value: "FUTO (Mechatronics)" },
-  { label: "Location", value: "Nigeria" },
-  { label: "Origin", value: "Umuahia, Abia" },
+  { label: "Experience", value: "2+ Years", icon: Code2 },
+  { label: "University", value: "FUTO (Mechatronics)", icon: Cpu },
+  { label: "Location", value: "Nigeria", icon: Globe },
+  { label: "Origin", value: "Umuahia, Abia", icon: Rocket },
 ];
+
+const techStack = ["React", "TypeScript", "Node.js", "Python", "Arduino", "Docker"];
 
 const AboutSection = () => (
   <section id="about" className="py-24 px-6 md:px-12 lg:px-24 max-w-5xl mx-auto">
@@ -39,22 +42,49 @@ const AboutSection = () => (
             tinkering with robotics projects, or learning about system design and cloud architecture.
           </p>
 
+          {/* Tech I work with */}
+          <div className="pt-4">
+            <p className="font-mono text-primary text-xs mb-3">Technologies I work with:</p>
+            <div className="flex flex-wrap gap-2">
+              {techStack.map((tech) => (
+                <motion.span
+                  key={tech}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="font-mono text-xs border border-primary/30 text-primary/80 bg-primary/5 px-3 py-1.5 rounded-full hover:border-primary/60 hover:bg-primary/10 transition-colors cursor-default"
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+
           <div className="grid grid-cols-2 gap-3 pt-4">
             {highlights.map((h) => (
-              <div key={h.label} className="rounded-lg border border-border bg-card p-3 text-center" style={{ background: "var(--gradient-card)" }}>
+              <motion.div
+                key={h.label}
+                whileHover={{ scale: 1.03, borderColor: "hsl(45 90% 55% / 0.4)" }}
+                className="rounded-lg border border-border bg-card p-4 text-center group hover:shadow-[var(--shadow-glow)] transition-all"
+                style={{ background: "var(--gradient-card)" }}
+              >
+                <h.icon size={16} className="text-primary/60 mx-auto mb-2 group-hover:text-primary transition-colors" />
                 <p className="font-mono text-primary text-sm font-bold">{h.value}</p>
                 <p className="text-xs text-muted-foreground mt-1">{h.label}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
 
         <div className="relative shrink-0 w-56 h-56 md:w-64 md:h-64 mx-auto md:mx-0">
-          <div className="absolute inset-0 border-2 border-primary rounded-lg translate-x-4 translate-y-4" />
+          <motion.div
+            className="absolute inset-0 border-2 border-primary/40 rounded-lg translate-x-4 translate-y-4"
+            whileHover={{ translateX: 6, translateY: 6 }}
+            transition={{ duration: 0.3 }}
+          />
+          <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 rounded-lg blur-sm" />
           <img
             src={profileImg}
             alt="Ngbaronye Nmesirionye"
-            className="relative rounded-lg w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+            className="relative rounded-lg w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500 border border-primary/20"
           />
         </div>
       </div>
