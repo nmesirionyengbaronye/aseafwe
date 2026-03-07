@@ -41,8 +41,9 @@ EDUCATION
 
 SKILLS
   Frontend: React, TypeScript, Tailwind CSS, Next.js, HTML/CSS, Framer Motion
-  API & Backend: Node.js, Express, REST APIs, GraphQL, PostgreSQL, MongoDB
+  API & Backend: Node.js, Express, REST APIs, GraphQL, PostgreSQL, MongoDB, Python
   Tools & DevOps: Git, Docker, CI/CD, Vite, Figma, Postman
+  Robotics: Arduino, Raspberry Pi, Embedded C, Sensors & Actuators
 
 PROJECTS
   E-Library
