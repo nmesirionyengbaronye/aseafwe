@@ -33,6 +33,15 @@ const projects = [
     image: zerveImg,
     featured: true,
   },
+  {
+    title: "MarketAI API",
+    description: "An elite market intelligence dashboard providing real-time data streams, AI-powered market synthesis, trending product analytics, and global market indicators with a premium dark-themed interface.",
+    tech: ["React", "TypeScript", "API", "AI"],
+    github: "",
+    live: "https://marketapiai.netlify.app",
+    image: marketaiImg,
+    featured: true,
+  },
 ];
 
 const container = {
