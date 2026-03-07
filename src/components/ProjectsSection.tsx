@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github, Folder } from "lucide-react";
 import elibraryImg from "@/assets/project-elibrary.jpg";
 import zerveImg from "@/assets/project-zerve.jpg";
+import emotionalSupportImg from "@/assets/project-emotional-support.jpg";
 
 const projects = [
   {
@@ -11,6 +12,15 @@ const projects = [
     github: "https://github.com/Panther0508/E-library",
     live: "https://e-library-panther0508.vercel.app",
     image: elibraryImg,
+    featured: true,
+  },
+  {
+    title: "Emotional Support Model",
+    description: "An AI-powered emotional support chatbot built with Python. Uses natural language processing to provide empathetic responses and mental wellness support through conversational AI.",
+    tech: ["Python", "NLP", "Machine Learning", "AI"],
+    github: "https://github.com/Panther0508/Emotional-Support-Model",
+    live: "",
+    image: emotionalSupportImg,
     featured: true,
   },
   {
