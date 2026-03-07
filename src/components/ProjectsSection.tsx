@@ -3,6 +3,7 @@ import { ExternalLink, Github, Folder } from "lucide-react";
 import elibraryImg from "@/assets/project-elibrary.jpg";
 import zerveImg from "@/assets/project-zerve.jpg";
 import emotionalSupportImg from "@/assets/project-emotional-support.jpg";
+import marketaiImg from "@/assets/project-marketai.jpg";
 
 const projects = [
   {
@@ -30,6 +31,15 @@ const projects = [
     github: "#",
     live: "https://app.zerve.ai/notebook/67aee2b8-045d-4f51-bd59-e54118a84daa?session_id=3df49dfe-ff30-4395-b106-6dbc1327ae78",
     image: zerveImg,
+    featured: true,
+  },
+  {
+    title: "MarketAI API",
+    description: "An elite market intelligence dashboard providing real-time data streams, AI-powered market synthesis, trending product analytics, and global market indicators with a premium dark-themed interface.",
+    tech: ["React", "TypeScript", "API", "AI"],
+    github: "",
+    live: "https://marketapiai.netlify.app",
+    image: marketaiImg,
     featured: true,
   },
 ];
