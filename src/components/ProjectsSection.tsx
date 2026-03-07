@@ -97,9 +97,11 @@ const ProjectsSection = () => (
                 </h3>
               </div>
               <div className="flex gap-3">
-                <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all">
-                  <Github size={18} />
-                </a>
+                {project.github && project.github !== "#" && (
+                  <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all">
+                    <Github size={18} />
+                  </a>
+                )}
                 {project.live && (
                   <a href={project.live} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all">
                     <ExternalLink size={18} />
