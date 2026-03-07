@@ -4,7 +4,7 @@ import { Monitor, Server, Wrench, Bot } from "lucide-react";
 
 const skills = [
   { category: "Frontend", icon: Monitor, items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML/CSS", "Framer Motion"] },
-  { category: "API & Backend", icon: Server, items: ["Node.js", "Express", "REST APIs", "GraphQL", "PostgreSQL", "MongoDB"] },
+  { category: "API & Backend", icon: Server, items: ["Python", "Node.js", "Express", "REST APIs", "GraphQL", "PostgreSQL", "MongoDB"] },
   { category: "Tools & DevOps", icon: Wrench, items: ["Git", "Docker", "CI/CD", "Vite", "Figma", "Postman"] },
   { category: "Robotics", icon: Bot, items: ["Arduino", "Raspberry Pi", "Embedded C", "Sensors & Actuators", "PCB Design", "3D Printing"] },
 ];

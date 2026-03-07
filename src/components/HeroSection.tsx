@@ -49,8 +49,13 @@ PROJECTS
   E-Library
     A digital library application for browsing, searching, and managing books online.
     Tech: React, TypeScript, Tailwind CSS
-    Live: e-library-panther0508.pxxl.click
+    Live: e-library-panther0508.vercel.app
     GitHub: github.com/Panther0508/E-library
+
+  Emotional Support Model
+    An AI-powered emotional support chatbot using NLP for empathetic responses.
+    Tech: Python, NLP, Machine Learning, AI
+    GitHub: github.com/Panther0508/Emotional-Support-Model
 
   Zerve API Notebook
     An API notebook for data exploration, API development, and interactive

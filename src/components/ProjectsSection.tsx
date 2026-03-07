@@ -100,9 +100,11 @@ const ProjectsSection = () => (
                 <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all">
                   <Github size={18} />
                 </a>
-                <a href={project.live} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all">
-                  <ExternalLink size={18} />
-                </a>
+                {project.live && (
+                  <a href={project.live} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary hover:-translate-y-0.5 transition-all">
+                    <ExternalLink size={18} />
+                  </a>
+                )}
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed mb-5">{project.description}</p>
