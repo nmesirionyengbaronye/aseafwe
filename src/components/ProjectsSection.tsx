@@ -3,6 +3,7 @@ import { ExternalLink, Github, Folder } from "lucide-react";
 import elibraryImg from "@/assets/project-elibrary.jpg";
 import zerveImg from "@/assets/project-zerve.jpg";
 import emotionalSupportImg from "@/assets/project-emotional-support.jpg";
+import marketaiImg from "@/assets/project-marketai.jpg";
 
 const projects = [
   {
