@@ -25,8 +25,8 @@ const projects = [
     featured: true,
   },
   {
-    title: "Zerve API Notebook",
-    description: "An API notebook built on the Zerve platform for data exploration, API development, and interactive code execution in the cloud.",
+    title: "IntentScope",
+    description: "A data exploration and interactive code execution platform built on Zerve, enabling API development and cloud-based data science workflows.",
     tech: ["Python", "API", "Zerve", "Data Science"],
     github: "#",
     live: "https://IntentScope.hub.zerve.cloud",
