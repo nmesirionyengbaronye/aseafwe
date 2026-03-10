@@ -29,7 +29,7 @@ const projects = [
     description: "An API notebook built on the Zerve platform for data exploration, API development, and interactive code execution in the cloud.",
     tech: ["Python", "API", "Zerve", "Data Science"],
     github: "#",
-    live: "https://app.zerve.ai/notebook/67aee2b8-045d-4f51-bd59-e54118a84daa?session_id=3df49dfe-ff30-4395-b106-6dbc1327ae78",
+    live: "https://IntentScope.hub.zerve.cloud",
     image: zerveImg,
     featured: true,
   },
