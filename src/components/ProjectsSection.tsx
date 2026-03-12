@@ -49,6 +49,16 @@ const projects = [
     image: marketaiImg,
     featured: true,
   },
+  {
+    title: "AI Resume Analyzer",
+    description: "A resume screening tool for employers to efficiently sort and analyze staff resumes at scale with intelligent scoring and filtering.",
+    details: "AI Resume Analyzer is a practical HR-tech tool designed to help employers process and evaluate large volumes of resumes efficiently. The platform features resume upload and parsing, keyword-based scoring, candidate ranking, and filtering capabilities — enabling recruiters to quickly identify top candidates from millions of applications. Built with Python on the backend with a clean web interface, the application demonstrates full-stack development skills including file processing, data extraction, scoring algorithms, and API integration. While the AI features operate locally using Python-based NLP pipelines rather than external AI services, all core functionality — resume parsing, skill matching, and candidate comparison — works end-to-end.",
+    tech: ["Python", "API", "NLP", "Full-Stack"],
+    github: "https://github.com/Panther0508/Ai-resume-analyzer",
+    live: "https://ai-resume-analyzer-7ubo.onrender.com/",
+    image: resumeAnalyzerImg,
+    featured: true,
+  },
 ];
 
 const container = {
