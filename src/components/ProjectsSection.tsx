@@ -44,7 +44,7 @@ const projects = [
     details: "MarketAI API is a premium market intelligence platform that aggregates and analyzes real-time market data using AI-powered synthesis. The dashboard features live data streaming for up-to-the-minute market indicators, AI-driven trend analysis that identifies emerging product opportunities, and interactive visualizations for exploring market dynamics. Built with React and TypeScript, the front-end delivers a polished, dark-themed professional interface with responsive charts, data tables, and filtering capabilities. The API integration layer demonstrates proficiency in consuming and transforming external data sources, handling asynchronous data flows, and presenting complex information in an intuitive, actionable format. This project showcases full-stack development skills, data visualization expertise, and the ability to build enterprise-grade analytics tools.",
     tech: ["React", "TypeScript", "API", "AI"],
     github: "https://github.com/Panther0508/Market-Trend-AI",
-    live: "https://market-trend-ai.pxxl.click",
+    live: "https://market-trend-ai.vercel.app",
     image: marketaiImg,
     featured: true,
   },
