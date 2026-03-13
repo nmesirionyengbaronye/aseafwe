@@ -25,7 +25,7 @@ const projects = [
     details: "This project demonstrates advanced machine learning and NLP capabilities applied to a meaningful real-world problem — mental health support. The chatbot leverages a trained NLP pipeline that includes tokenization, sentiment analysis, and intent classification to understand user emotions and context. It generates empathetic, contextually appropriate responses using a combination of pattern matching and ML-driven response selection. The model was trained on curated conversational datasets focused on emotional support scenarios. Key technical highlights include text preprocessing pipelines, feature extraction, model training and evaluation, and a conversational interface. This project showcases proficiency in Python, scikit-learn, NLP libraries, and the ability to build AI systems that address human-centered challenges.",
     tech: ["Python", "NLP", "Machine Learning", "AI"],
     github: "https://github.com/Panther0508/Emotional-Support-Model",
-    live: "https://emotional-support-model.onrender.com",
+    live: "https://emotional-support-model-1.onrender.com/",
     image: emotionalSupportImg,
     featured: true,
   },
