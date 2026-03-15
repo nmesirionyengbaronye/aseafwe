@@ -46,6 +46,18 @@ SKILLS
   Robotics: Arduino, Raspberry Pi, Embedded C, Sensors & Actuators
 
 PROJECTS
+  MarketAI API
+    An elite market intelligence dashboard with real-time data streams and AI-powered analytics.
+    Tech: React, TypeScript, API, AI
+    Live: market-trend-ai.onrender.com
+    GitHub: github.com/Panther0508/Market-Trend-AI
+
+  Developer News Dashboard
+    A centralized news aggregation dashboard for developers with real-time tech updates.
+    Tech: React, TypeScript, API, News Aggregation
+    Live: developer-news-dashboard.onrender.com
+    GitHub: github.com/Panther0508/Developer-News-Dashboard
+
   E-Library
     A digital library application for browsing, searching, and managing books online.
     Tech: React, TypeScript, Tailwind CSS
@@ -55,12 +67,20 @@ PROJECTS
   Emotional Support Model
     An AI-powered emotional support chatbot using NLP for empathetic responses.
     Tech: Python, NLP, Machine Learning, AI
+    Live: emotional-support-model-1.onrender.com
     GitHub: github.com/Panther0508/Emotional-Support-Model
 
-  Zerve API Notebook
-    An API notebook for data exploration, API development, and interactive
-    code execution in the cloud.
-    Tech: Python, API, Zerve, Data Science
+  IntentScope
+    A data exploration and interactive code execution platform for API development.
+    Tech: Python, API, Data Science, NLP
+    Live: intentscope.pxxl.click
+    GitHub: github.com/Panther0508/IntentScope
+
+  AI Resume Analyzer
+    A resume screening tool for employers with intelligent scoring and filtering.
+    Tech: Python, API, NLP, Full-Stack
+    Live: ai-resume-analyzer-7ubo.onrender.com
+    GitHub: github.com/Panther0508/Ai-resume-analyzer
 
 INTERESTS
   Robotics, open-source contribution, system design, cloud architecture, new technologies
