@@ -7,12 +7,33 @@ import zerveImg from "@/assets/project-zerve.jpg";
 import emotionalSupportImg from "@/assets/project-emotional-support.jpg";
 import marketaiImg from "@/assets/project-marketai.jpg";
 import resumeAnalyzerImg from "@/assets/project-resume-analyzer.jpg";
+import newsDashboardImg from "@/assets/project-news-dashboard.jpg";
 
 const projects = [
   {
+    title: "MarketAI API",
+    description: "An elite market intelligence dashboard with real-time data streams, AI-powered market synthesis, and trending product analytics.",
+    details: "**Problem:** Businesses and analysts struggle to keep up with rapidly changing market trends, often relying on fragmented data sources and manual research that leads to delayed, uninformed decisions.\n\n**Solution:** MarketAI API is a premium market intelligence platform that aggregates and analyzes real-time market data using AI-powered synthesis. The dashboard delivers live data streaming for up-to-the-minute market indicators, AI-driven trend analysis that identifies emerging product opportunities, and interactive visualizations for exploring market dynamics.\n\n**Key Features:**\n• Real-time data streaming and market indicator tracking\n• AI-powered trend analysis and opportunity identification\n• Interactive charts, data tables, and advanced filtering\n• Dark-themed professional interface with responsive design\n• Robust API integration layer for consuming and transforming external data sources",
+    tech: ["React", "TypeScript", "API", "AI"],
+    github: "https://github.com/Panther0508/Market-Trend-AI",
+    live: "https://market-trend-ai.onrender.com/",
+    image: marketaiImg,
+    featured: true,
+  },
+  {
+    title: "Developer News Dashboard",
+    description: "A centralized news aggregation dashboard for developers, curating the latest tech articles, trending topics, and industry updates in real time.",
+    details: "**Problem:** Developers waste valuable time jumping between multiple news sources, blogs, and social feeds to stay updated on the latest technologies, frameworks, and industry trends — often missing critical updates.\n\n**Solution:** The Developer News Dashboard is a one-stop aggregation platform that curates and organizes developer-focused news from multiple sources into a clean, scannable interface. It features category-based filtering, trending topic highlights, and real-time content updates.\n\n**Key Features:**\n• Real-time news aggregation from multiple developer-focused sources\n• Category filtering (frontend, backend, DevOps, AI/ML, etc.)\n• Trending topics sidebar with popularity metrics\n• Clean, dark-themed UI optimized for readability\n• Responsive design for desktop and mobile browsing",
+    tech: ["React", "TypeScript", "API", "News Aggregation"],
+    github: "https://github.com/Panther0508/Developer-News-Dashboard",
+    live: "https://developer-news-dashboard.onrender.com",
+    image: newsDashboardImg,
+    featured: true,
+  },
+  {
     title: "E-Library",
     description: "A digital library application for browsing, searching, and managing books online with a clean, intuitive interface.",
-    details: "This full-stack digital library platform demonstrates strong front-end architecture and UX design skills. Users can browse an extensive catalog of books, search with real-time filtering by title, author, or genre, and manage their reading lists. The responsive design ensures a seamless experience across desktop, tablet, and mobile devices. Built with React and TypeScript for type-safe, maintainable code, and styled with Tailwind CSS for a modern, accessible interface. The project showcases component-driven development, state management patterns, and attention to user experience details like loading states, error handling, and smooth transitions.",
+    details: "**Problem:** Access to organized digital book collections is often locked behind clunky interfaces or expensive platforms, making it difficult for readers to discover and manage books efficiently.\n\n**Solution:** This full-stack digital library platform provides a seamless book browsing and management experience. Users can explore an extensive catalog, search with real-time filtering by title, author, or genre, and manage their reading lists — all through a modern, accessible interface.\n\n**Key Features:**\n• Real-time search and filtering by title, author, and genre\n• Responsive design for desktop, tablet, and mobile\n• Component-driven architecture with React and TypeScript\n• Smooth loading states, error handling, and transitions\n• Clean, intuitive UI styled with Tailwind CSS",
     tech: ["React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/Panther0508/E-library",
     live: "https://e-library-panther0508.vercel.app",
@@ -22,7 +43,7 @@ const projects = [
   {
     title: "Emotional Support Model",
     description: "An AI-powered emotional support chatbot using natural language processing to provide empathetic responses and mental wellness support.",
-    details: "This project demonstrates advanced machine learning and NLP capabilities applied to a meaningful real-world problem — mental health support. The chatbot leverages a trained NLP pipeline that includes tokenization, sentiment analysis, and intent classification to understand user emotions and context. It generates empathetic, contextually appropriate responses using a combination of pattern matching and ML-driven response selection. The model was trained on curated conversational datasets focused on emotional support scenarios. Key technical highlights include text preprocessing pipelines, feature extraction, model training and evaluation, and a conversational interface. This project showcases proficiency in Python, scikit-learn, NLP libraries, and the ability to build AI systems that address human-centered challenges.",
+    details: "**Problem:** Mental health support is often inaccessible, expensive, or stigmatized — leaving many people without a safe space to express their emotions and receive empathetic guidance when they need it most.\n\n**Solution:** This AI-powered chatbot leverages a trained NLP pipeline including tokenization, sentiment analysis, and intent classification to understand user emotions and generate empathetic, contextually appropriate responses. Trained on curated emotional support conversation datasets.\n\n**Key Features:**\n• Sentiment analysis and intent classification for emotion understanding\n• Empathetic response generation using ML-driven selection\n• Text preprocessing and feature extraction pipelines\n• Conversational interface for natural interaction\n• Trained on curated mental health support datasets",
     tech: ["Python", "NLP", "Machine Learning", "AI"],
     github: "https://github.com/Panther0508/Emotional-Support-Model",
     live: "https://emotional-support-model-1.onrender.com/",
@@ -32,7 +53,7 @@ const projects = [
   {
     title: "IntentScope",
     description: "A data exploration and interactive code execution platform enabling API development and cloud-based data science workflows.",
-    details: "IntentScope is a comprehensive data exploration platform designed for developers and data scientists. It provides an interactive environment for writing and executing code, exploring datasets, and building API endpoints — all within a cloud-based workspace. Key features include intent classification for natural language queries, interactive notebook-style code execution, real-time data visualization, and seamless API development workflows. The platform demonstrates expertise in Python backend development, RESTful API design, data processing pipelines, and cloud deployment. It highlights the ability to build developer tools that streamline complex data science workflows into accessible, productive experiences.",
+    details: "**Problem:** Data scientists and developers often lack a unified environment for exploring datasets, writing code, and building APIs — switching between tools slows down productivity and creates friction in workflows.\n\n**Solution:** IntentScope is a comprehensive data exploration platform that provides an interactive environment for writing and executing code, exploring datasets, and building API endpoints — all within a cloud-based workspace. It features intent classification for natural language queries and seamless API development workflows.\n\n**Key Features:**\n• Intent classification for natural language data queries\n• Interactive notebook-style code execution\n• Real-time data visualization\n• Seamless API development and testing workflows\n• Cloud-based workspace accessible from anywhere",
     tech: ["Python", "API", "Data Science", "NLP"],
     github: "https://github.com/Panther0508/IntentScope",
     live: "https://intentscope.pxxl.click",
@@ -40,19 +61,9 @@ const projects = [
     featured: true,
   },
   {
-    title: "MarketAI API",
-    description: "An elite market intelligence dashboard with real-time data streams, AI-powered market synthesis, and trending product analytics.",
-    details: "MarketAI API is a premium market intelligence platform that aggregates and analyzes real-time market data using AI-powered synthesis. The dashboard features live data streaming for up-to-the-minute market indicators, AI-driven trend analysis that identifies emerging product opportunities, and interactive visualizations for exploring market dynamics. Built with React and TypeScript, the front-end delivers a polished, dark-themed professional interface with responsive charts, data tables, and filtering capabilities. The API integration layer demonstrates proficiency in consuming and transforming external data sources, handling asynchronous data flows, and presenting complex information in an intuitive, actionable format. This project showcases full-stack development skills, data visualization expertise, and the ability to build enterprise-grade analytics tools.",
-    tech: ["React", "TypeScript", "API", "AI"],
-    github: "https://github.com/Panther0508/Market-Trend-AI",
-    live: "https://market-trend-ai.vercel.app",
-    image: marketaiImg,
-    featured: true,
-  },
-  {
     title: "AI Resume Analyzer",
     description: "A resume screening tool for employers to efficiently sort and analyze staff resumes at scale with intelligent scoring and filtering.",
-    details: "AI Resume Analyzer is a practical HR-tech tool designed to help employers process and evaluate large volumes of resumes efficiently. The platform features resume upload and parsing, keyword-based scoring, candidate ranking, and filtering capabilities — enabling recruiters to quickly identify top candidates from millions of applications. Built with Python on the backend with a clean web interface, the application demonstrates full-stack development skills including file processing, data extraction, scoring algorithms, and API integration. While the AI features operate locally using Python-based NLP pipelines rather than external AI services, all core functionality — resume parsing, skill matching, and candidate comparison — works end-to-end.",
+    details: "**Problem:** Recruiters and HR teams are overwhelmed by the volume of resumes they receive, making it nearly impossible to manually review and compare candidates fairly and efficiently at scale.\n\n**Solution:** AI Resume Analyzer is a practical HR-tech tool that automates resume processing and evaluation. It features resume upload and parsing, keyword-based scoring, candidate ranking, and filtering — enabling recruiters to quickly identify top candidates from large applicant pools.\n\n**Key Features:**\n• Automated resume parsing and data extraction\n• Keyword-based scoring and candidate ranking algorithms\n• Advanced filtering and comparison capabilities\n• Python-based NLP pipelines for skill matching\n• Clean web interface for easy recruiter interaction",
     tech: ["Python", "API", "NLP", "Full-Stack"],
     github: "https://github.com/Panther0508/Ai-resume-analyzer",
     live: "https://ai-resume-analyzer-7ubo.onrender.com/login",
