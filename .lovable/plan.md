@@ -1,61 +1,31 @@
 
-# Portfolio Update Plan
 
-## Overview
-Multiple updates to your portfolio: new color scheme, contact details, tabbed layouts, project images, favicon, and navbar branding.
+## Plan: Add Developer News Dashboard, Reorder Projects, Update Links & CV
 
-## Changes
+### Changes
 
-### 1. Color Scheme: Dark Black, Gold, and White
-Update `src/index.css` CSS variables:
-- Background: deep black (`0 0% 4%`)
-- Foreground: white (`0 0% 95%`)
-- Primary/accent: gold (`45 90% 55%`)
-- Muted foreground: warm gray
-- Cards/borders: dark charcoal tones
-- Update gradients and glow to use gold instead of teal
+**1. `src/components/ProjectsSection.tsx`**
+- Update MarketAI API live link to `https://market-trend-ai.onrender.com/`
+- Add new "Developer News Dashboard" project entry with:
+  - GitHub: `https://github.com/Panther0508/Developer-News-Dashboard`
+  - Live: `https://developer-news-dashboard.onrender.com`
+  - Generated image asset
+  - Description and structured "Read more" details with Problem / Solution sections
+  - Tech tags (React, TypeScript, API, etc.)
+- Reorder projects array to: MarketAI API → Developer News Dashboard → E-Library → Emotional Support Model → IntentScope → AI Resume Analyzer
+- Update all project `details` fields to include structured sections: **Problem**, **Solution**, and **Key Features** for better readability
 
-### 2. Navbar Site Title
-Update `src/components/Navbar.tsx`:
-- Change the logo text from "NN." to "Ngbaronye Nmesirionye" (or "Ngbaronye N." for space)
-- Add profile photo as a small avatar next to the name
+**2. `src/assets/project-news-dashboard.jpg`** (new)
+- Generate a preview image for the Developer News Dashboard project
 
-### 3. Skills Section as Tabs
-Rewrite `src/components/SkillsSection.tsx`:
-- Use Radix UI Tabs (already installed) to display skill categories as tab triggers
-- Each tab shows its skill list when selected
-- Styled to match the gold/black theme
+**3. `src/components/HeroSection.tsx`**
+- Update the CV content in `generateCV()` to include all current projects (MarketAI API, Developer News Dashboard, E-Library, Emotional Support Model, IntentScope, AI Resume Analyzer) with correct links
 
-### 4. Contact Section with Tabs + Real Details
-Rewrite `src/components/ContactSection.tsx`:
-- Add tabs for different contact methods: Email, Phone, GitHub, X (Twitter)
-- Real details:
-  - Email: nmesirionyengbaronye@gmail.com
-  - Phone: 07040369525
-  - GitHub: Panther0508
-  - X: Pantherlord0508
+### Project Order
+1. MarketAI API
+2. Developer News Dashboard (new)
+3. E-Library
+4. Emotional Support Model
+5. IntentScope
+6. AI Resume Analyzer
 
-### 5. Update Social Links Throughout
-Update `src/components/HeroSection.tsx` side social links:
-- GitHub: https://github.com/Panther0508
-- X/Twitter: https://x.com/Pantherlord0508
-- Email: mailto:nmesirionyengbaronye@gmail.com
-
-### 6. Generate Project Images
-Use the AI image generation API to create placeholder images for:
-- E-Library (a digital library visual)
-- Zerve API Notebook (a data science/API notebook visual)
-
-Update `src/components/ProjectsSection.tsx` to display these images in project cards.
-
-### 7. Favicon
-Copy the uploaded profile photo to `public/favicon.png` and update `index.html` to reference it as the favicon.
-
-### 8. Update Contact Email Everywhere
-Replace `hello@example.com` with `nmesirionyengbaronye@gmail.com` in HeroSection and ContactSection.
-
-## Technical Details
-- Tabs component: use existing `src/components/ui/tabs.tsx` (Radix)
-- Image generation: use Nano banana model for 2 project images, save as static assets
-- Files modified: `index.css`, `Navbar.tsx`, `HeroSection.tsx`, `SkillsSection.tsx`, `ProjectsSection.tsx`, `ContactSection.tsx`, `index.html`
-- New files: generated project images in `src/assets/`
