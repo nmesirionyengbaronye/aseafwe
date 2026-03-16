@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Briefcase, CheckCircle } from "lucide-react";
+import { Briefcase, CheckCircle } from "lucide-react";
 
 const clientProjects = [
   {
