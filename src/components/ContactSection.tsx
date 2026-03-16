@@ -2,13 +2,30 @@ import { motion } from "framer-motion";
 import { Mail, MessageCircle, Github, Twitter, Send, Sparkles } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
-const contacts = [
-  { label: "Email", icon: Mail, value: "nmesirionyengbaronye@gmail.com", href: "mailto:nmesirionyengbaronye@gmail.com", cta: "Send Email" },
-  { label: "WhatsApp", icon: MessageCircle, value: "07040369525", href: "https://wa.me/2347040369525", cta: "Chat on WhatsApp" },
-  { label: "Telegram", icon: Send, value: "07040369525", href: "https://t.me/+2347040369525", cta: "Chat on Telegram" },
-  { label: "GitHub", icon: Github, value: "Panther0508", href: "https://github.com/Panther0508", cta: "Visit GitHub" },
-  { label: "X", icon: Twitter, value: "@Pantherlord0508", href: "https://x.com/Pantherlord0508", cta: "Visit X" },
+const templates = [
+  { label: "Project opportunity", text: "Hi Ngbaronye, I'd like to discuss a project opportunity with you." },
+  { label: "Freelance hiring", text: "Hi Ngbaronye, I'm interested in hiring you for freelance work." },
+  { label: "Portfolio question", text: "Hi Ngbaronye, I have a question about your portfolio." },
 ];
+
+const contacts = [
+  { label: "Email", icon: Mail, value: "nmesirionyengbaronye@gmail.com", href: "mailto:nmesirionyengbaronye@gmail.com", cta: "Send Email", hasTemplates: true },
+  { label: "WhatsApp", icon: MessageCircle, value: "07040369525", href: "https://wa.me/2347040369525", cta: "Chat on WhatsApp", hasTemplates: true },
+  { label: "Telegram", icon: Send, value: "07040369525", href: "https://t.me/+2347040369525", cta: "Chat on Telegram", hasTemplates: false },
+  { label: "GitHub", icon: Github, value: "Panther0508", href: "https://github.com/Panther0508", cta: "Visit GitHub", hasTemplates: false },
+  { label: "X", icon: Twitter, value: "@Pantherlord0508", href: "https://x.com/Pantherlord0508", cta: "Visit X", hasTemplates: false },
+];
+
+const buildHref = (contact: typeof contacts[0], templateText?: string) => {
+  if (!templateText) return contact.href;
+  if (contact.label === "Email") {
+    return `mailto:${contact.value}?subject=${encodeURIComponent("Hello from your portfolio")}&body=${encodeURIComponent(templateText)}`;
+  }
+  if (contact.label === "WhatsApp") {
+    return `https://wa.me/2347040369525?text=${encodeURIComponent(templateText)}`;
+  }
+  return contact.href;
+};
 
 const ContactSection = () => (
   <section id="contact" className="py-24 px-6 md:px-12 lg:px-24 max-w-2xl mx-auto text-center">
@@ -29,7 +46,7 @@ const ContactSection = () => (
         <span className="font-mono text-xs text-primary">Available for work</span>
       </motion.div>
 
-      <p className="font-mono text-primary text-sm mb-4">04. What's Next?</p>
+      <p className="font-mono text-primary text-sm mb-4">05. What's Next?</p>
       <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">Get In Touch</h2>
       <p className="text-muted-foreground leading-relaxed mb-10">
         I'm currently open to new opportunities and collaborations. Whether you have a project in mind,
@@ -62,6 +79,24 @@ const ContactSection = () => (
                 <c.icon size={24} className="text-primary" />
               </div>
               <p className="font-mono text-foreground text-sm">{c.value}</p>
+
+              {c.hasTemplates && (
+                <div className="w-full space-y-2 my-2">
+                  <p className="text-xs font-mono text-muted-foreground mb-2">Quick message templates:</p>
+                  {templates.map((t) => (
+                    <a
+                      key={t.label}
+                      href={buildHref(c, t.text)}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block w-full text-left text-sm font-mono text-muted-foreground border border-border rounded px-4 py-2.5 hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all"
+                    >
+                      {t.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+
               <a
                 href={c.href}
                 target="_blank"

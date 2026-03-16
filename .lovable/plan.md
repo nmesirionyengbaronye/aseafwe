@@ -1,76 +1,61 @@
 
+# Portfolio Update Plan
 
-# Plan: Enhanced Projects, Chatbot, Template Messages & Client Projects Section
+## Overview
+Multiple updates to your portfolio: new color scheme, contact details, tabbed layouts, project images, favicon, and navbar branding.
 
-## Summary
-Four major updates: restructured project details with separate collapsible sections, an AI chatbot widget, pre-filled template messages for WhatsApp/Email, and a new "Completed Projects" section for real client work.
+## Changes
 
----
+### 1. Color Scheme: Dark Black, Gold, and White
+Update `src/index.css` CSS variables:
+- Background: deep black (`0 0% 4%`)
+- Foreground: white (`0 0% 95%`)
+- Primary/accent: gold (`45 90% 55%`)
+- Muted foreground: warm gray
+- Cards/borders: dark charcoal tones
+- Update gradients and glow to use gold instead of teal
 
-## 1. Restructured Project Card Details
+### 2. Navbar Site Title
+Update `src/components/Navbar.tsx`:
+- Change the logo text from "NN." to "Ngbaronye Nmesirionye" (or "Ngbaronye N." for space)
+- Add profile photo as a small avatar next to the name
 
-**File: `src/components/ProjectsSection.tsx`**
+### 3. Skills Section as Tabs
+Rewrite `src/components/SkillsSection.tsx`:
+- Use Radix UI Tabs (already installed) to display skill categories as tab triggers
+- Each tab shows its skill list when selected
+- Styled to match the gold/black theme
 
-Split each project's data into separate fields: `description`, `problem`, `solution`, `features`. The card UI will show description always visible, then three independent collapsible sections:
-- **Problem** (collapsible, red-ish accent border)
-- **Solution** (collapsible, green-ish accent border)
-- **Key Features** (collapsible, primary accent border)
+### 4. Contact Section with Tabs + Real Details
+Rewrite `src/components/ContactSection.tsx`:
+- Add tabs for different contact methods: Email, Phone, GitHub, X (Twitter)
+- Real details:
+  - Email: nmesirionyengbaronye@gmail.com
+  - Phone: 07040369525
+  - GitHub: Panther0508
+  - X: Pantherlord0508
 
-Each with its own toggle trigger, all collapsed by default.
+### 5. Update Social Links Throughout
+Update `src/components/HeroSection.tsx` side social links:
+- GitHub: https://github.com/Panther0508
+- X/Twitter: https://x.com/Pantherlord0508
+- Email: mailto:nmesirionyengbaronye@gmail.com
 
----
+### 6. Generate Project Images
+Use the AI image generation API to create placeholder images for:
+- E-Library (a digital library visual)
+- Zerve API Notebook (a data science/API notebook visual)
 
-## 2. AI Chatbot Widget
+Update `src/components/ProjectsSection.tsx` to display these images in project cards.
 
-**New file: `src/components/ChatBot.tsx`**
+### 7. Favicon
+Copy the uploaded profile photo to `public/favicon.png` and update `index.html` to reference it as the favicon.
 
-A floating chat bubble (bottom-right corner) that opens a chat panel. Uses Lovable AI via a Supabase edge function. General-purpose assistant.
+### 8. Update Contact Email Everywhere
+Replace `hello@example.com` with `nmesirionyengbaronye@gmail.com` in HeroSection and ContactSection.
 
-**New file: `supabase/functions/chat/index.ts`**
-
-Edge function that proxies to Lovable AI gateway with streaming SSE. System prompt: "You are a helpful AI assistant on Ngbaronye's portfolio site."
-
-**File: `src/pages/Index.tsx`** — Add `<ChatBot />` component.
-
----
-
-## 3. Template Messages for WhatsApp & Email
-
-**File: `src/components/ContactSection.tsx`**
-
-For WhatsApp and Email tabs, add pre-written template messages the visitor can select:
-- "Hi, I'd like to discuss a project opportunity"
-- "Hi, I'm interested in hiring you for freelance work"
-- "Hi, I have a question about your portfolio"
-
-Clicking a template auto-fills the WhatsApp link (`?text=...`) or `mailto:` link (`?subject=...&body=...`).
-
----
-
-## 4. Completed Projects Section (Client Work)
-
-**New file: `src/components/CompletedProjectsSection.tsx`**
-
-A new section between the existing Projects section and Contact section. Titled "Completed Projects" with subtitle "Real projects delivered for clients." Contains 3 placeholder cards with editable fields (title, client industry, description, tech used). Styled similarly to the project cards but with a "Client Work" badge instead of "Featured."
-
-**File: `src/pages/Index.tsx`** — Insert `<CompletedProjectsSection />` after `<ProjectsSection />`.
-
-**File: `src/components/Navbar.tsx`** — Update nav numbering if needed.
-
----
-
-## 5. Rename Existing Projects Section
-
-**File: `src/components/ProjectsSection.tsx`**
-
-Change section title from "Featured Projects" to "Open Source Projects" — making it clear these are GitHub-based, not MVPs.
-
----
-
-## Technical Notes
-
-- Chatbot requires Lovable Cloud for the edge function and `LOVABLE_API_KEY`
-- Streaming SSE pattern for real-time token rendering in chat
-- Template messages use URL encoding for WhatsApp (`wa.me` API `text` param) and `mailto:` query params
-- All collapsible sections use existing Radix Collapsible component
-
+## Technical Details
+- Tabs component: use existing `src/components/ui/tabs.tsx` (Radix)
+- Image generation: use Nano banana model for 2 project images, save as static assets
+- Files modified: `index.css`, `Navbar.tsx`, `HeroSection.tsx`, `SkillsSection.tsx`, `ProjectsSection.tsx`, `ContactSection.tsx`, `index.html`
+- New files: generated project images in `src/assets/`

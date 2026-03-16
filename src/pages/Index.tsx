@@ -3,9 +3,11 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import CompletedProjectsSection from "@/components/CompletedProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SpaceBackground from "@/components/SpaceBackground";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -17,9 +19,11 @@ const Index = () => {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <CompletedProjectsSection />
         <ContactSection />
         <Footer />
       </div>
+      <ChatBot />
     </div>
   );
 };
