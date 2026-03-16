@@ -250,6 +250,7 @@ const HeroSection = () => {
             </a>
             <button
               onClick={handleDownloadCV}
+              data-cv-download
               className="inline-flex items-center gap-2 font-mono text-sm bg-primary text-primary-foreground px-7 py-4 rounded hover:bg-primary/90 transition-colors"
             >
               <Download size={16} />
