@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, Mail, ArrowDown, Twitter, Download, Eye } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
+import { jsPDF } from "jspdf";
 import profileImg from "@/assets/profile.jpg";
 
 const socials = [
@@ -18,80 +19,99 @@ const roles = [
 ];
 
 const generateCV = () => {
-  const cvContent = `
-NGBARONYE NMESIRIONYE
-Frontend & API Developer
-=======================================
+  const doc = new jsPDF();
+  const pageWidth = doc.internal.pageSize.getWidth();
+  let y = 20;
 
-CONTACT
-  Email: nmesirionyengbaronye@gmail.com
-  Phone: 07040369525
-  GitHub: github.com/Panther0508
-  X/Twitter: x.com/Pantherlord0508
+  const addSection = (title: string) => {
+    if (y > 260) { doc.addPage(); y = 20; }
+    y += 6;
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(13);
+    doc.setTextColor(180, 150, 50);
+    doc.text(title, 14, y);
+    y += 2;
+    doc.setDrawColor(180, 150, 50);
+    doc.line(14, y, pageWidth - 14, y);
+    y += 6;
+    doc.setTextColor(40, 40, 40);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+  };
 
-PROFILE
-  Passionate frontend and API developer with 2+ years of experience building
-  accessible, performant, and beautifully designed web applications and robust APIs.
-  Currently studying Computer Science at the Federal University of Technology, Owerri (FUTO).
-  Originally from Umuahia, Abia State, Nigeria.
+  const addLine = (text: string, indent = 14) => {
+    if (y > 275) { doc.addPage(); y = 20; }
+    const lines = doc.splitTextToSize(text, pageWidth - indent - 14);
+    doc.text(lines, indent, y);
+    y += lines.length * 5;
+  };
 
-EDUCATION
-  Federal University of Technology, Owerri (FUTO)
-  B.Eng Mechatronics Engineering (In Progress)
+  // Header
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(22);
+  doc.setTextColor(30, 30, 30);
+  doc.text("NGBARONYE NMESIRIONYE", pageWidth / 2, y, { align: "center" });
+  y += 8;
+  doc.setFontSize(12);
+  doc.setTextColor(180, 150, 50);
+  doc.text("Frontend & API Developer", pageWidth / 2, y, { align: "center" });
+  y += 4;
+  doc.setFontSize(9);
+  doc.setTextColor(100, 100, 100);
+  doc.text("nmesirionyengbaronye@gmail.com  |  07040369525  |  github.com/Panther0508  |  x.com/Pantherlord0508", pageWidth / 2, y + 4, { align: "center" });
+  y += 10;
 
-SKILLS
-  Frontend: React, TypeScript, Tailwind CSS, Next.js, HTML/CSS, Framer Motion
-  API & Backend: Node.js, Express, REST APIs, GraphQL, PostgreSQL, MongoDB, Python
-  Tools & DevOps: Git, Docker, CI/CD, Vite, Figma, Postman
-  Robotics: Arduino, Raspberry Pi, Embedded C, Sensors & Actuators
+  addSection("PROFILE");
+  addLine("Passionate frontend and API developer with 2+ years of experience building accessible, performant, and beautifully designed web applications and robust APIs. Currently studying Mechatronics Engineering at the Federal University of Technology, Owerri (FUTO). Originally from Umuahia, Abia State, Nigeria.");
 
-PROJECTS
-  MarketAI API
-    An elite market intelligence dashboard with real-time data streams and AI-powered analytics.
-    Tech: React, TypeScript, API, AI
-    Live: market-trend-ai.onrender.com
-    GitHub: github.com/Panther0508/Market-Trend-AI
+  addSection("EDUCATION");
+  doc.setFont("helvetica", "bold");
+  addLine("Federal University of Technology, Owerri (FUTO)");
+  doc.setFont("helvetica", "normal");
+  addLine("B.Eng Mechatronics Engineering (In Progress)");
 
-  Developer News Dashboard
-    A centralized news aggregation dashboard for developers with real-time tech updates.
-    Tech: React, TypeScript, API, News Aggregation
-    Live: developer-news-dashboard.onrender.com
-    GitHub: github.com/Panther0508/Developer-News-Dashboard
+  addSection("SKILLS");
+  const skills = [
+    ["Frontend", "React, TypeScript, Tailwind CSS, Next.js, HTML/CSS, Framer Motion"],
+    ["API & Backend", "Node.js, Express, REST APIs, GraphQL, PostgreSQL, MongoDB, Python"],
+    ["Tools & DevOps", "Git, Docker, CI/CD, Vite, Figma, Postman"],
+    ["Robotics", "Arduino, Raspberry Pi, Embedded C, Sensors & Actuators"],
+  ];
+  skills.forEach(([cat, items]) => {
+    doc.setFont("helvetica", "bold");
+    doc.text(`${cat}: `, 14, y);
+    const catWidth = doc.getTextWidth(`${cat}: `);
+    doc.setFont("helvetica", "normal");
+    const lines = doc.splitTextToSize(items, pageWidth - 14 - 14 - catWidth);
+    doc.text(lines, 14 + catWidth, y);
+    y += lines.length * 5 + 2;
+  });
 
-  E-Library
-    A digital library application for browsing, searching, and managing books online.
-    Tech: React, TypeScript, Tailwind CSS
-    Live: e-library-panther0508.vercel.app
-    GitHub: github.com/Panther0508/E-library
+  addSection("PROJECTS");
+  const projects = [
+    { name: "MarketAI API", desc: "Elite market intelligence dashboard with real-time data streams and AI-powered analytics.", tech: "React, TypeScript, API, AI" },
+    { name: "Developer News Dashboard", desc: "Centralized news aggregation dashboard for developers with real-time tech updates.", tech: "React, TypeScript, API" },
+    { name: "E-Library", desc: "Digital library application for browsing, searching, and managing books online.", tech: "React, TypeScript, Tailwind CSS" },
+    { name: "Emotional Support Model", desc: "AI-powered emotional support chatbot using NLP for empathetic responses.", tech: "Python, NLP, ML, AI" },
+    { name: "IntentScope", desc: "Data exploration and interactive code execution platform for API development.", tech: "Python, API, Data Science, NLP" },
+    { name: "AI Resume Analyzer", desc: "Resume screening tool for employers with intelligent scoring and filtering.", tech: "Python, API, NLP, Full-Stack" },
+  ];
+  projects.forEach((p) => {
+    if (y > 260) { doc.addPage(); y = 20; }
+    doc.setFont("helvetica", "bold");
+    addLine(p.name);
+    doc.setFont("helvetica", "normal");
+    addLine(p.desc, 20);
+    doc.setFont("helvetica", "italic");
+    addLine(`Tech: ${p.tech}`, 20);
+    doc.setFont("helvetica", "normal");
+    y += 2;
+  });
 
-  Emotional Support Model
-    An AI-powered emotional support chatbot using NLP for empathetic responses.
-    Tech: Python, NLP, Machine Learning, AI
-    Live: emotional-support-model-1.onrender.com
-    GitHub: github.com/Panther0508/Emotional-Support-Model
+  addSection("INTERESTS");
+  addLine("Robotics, open-source contribution, system design, cloud architecture, new technologies");
 
-  IntentScope
-    A data exploration and interactive code execution platform for API development.
-    Tech: Python, API, Data Science, NLP
-    Live: intentscope.pxxl.click
-    GitHub: github.com/Panther0508/IntentScope
-
-  AI Resume Analyzer
-    A resume screening tool for employers with intelligent scoring and filtering.
-    Tech: Python, API, NLP, Full-Stack
-    Live: ai-resume-analyzer-7ubo.onrender.com
-    GitHub: github.com/Panther0508/Ai-resume-analyzer
-
-INTERESTS
-  Robotics, open-source contribution, system design, cloud architecture, new technologies
-  `;
-  const blob = new Blob([cvContent], { type: "text/plain" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "Ngbaronye_Nmesirionye_CV.txt";
-  a.click();
-  URL.revokeObjectURL(url);
+  doc.save("Ngbaronye_Nmesirionye_CV.pdf");
 };
 
 const HeroSection = () => {

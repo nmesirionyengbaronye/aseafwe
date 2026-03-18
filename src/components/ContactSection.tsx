@@ -3,9 +3,18 @@ import { Mail, MessageCircle, Github, Twitter, Send, Sparkles } from "lucide-rea
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const templates = [
-  { label: "Project opportunity", text: "Hi Ngbaronye, I'd like to discuss a project opportunity with you." },
-  { label: "Freelance hiring", text: "Hi Ngbaronye, I'm interested in hiring you for freelance work." },
-  { label: "Portfolio question", text: "Hi Ngbaronye, I have a question about your portfolio." },
+  {
+    label: "Project opportunity",
+    text: "Hi Ngbaronye,\n\nI came across your portfolio and I'm really impressed by the quality of your work, especially your frontend development and API engineering projects. I have an exciting project opportunity that I believe aligns perfectly with your skill set, and I'd love to discuss the details with you.\n\nThe project involves building a modern web application with a strong focus on performance, accessibility, and beautiful UI design. I think your experience with React, TypeScript, and API development would be a great fit.\n\nWould you be available for a call or meeting sometime this week to discuss the scope, timeline, and compensation? I'm flexible with scheduling and happy to work around your availability.\n\nLooking forward to hearing from you!\n\nBest regards,\n[Your Name]",
+  },
+  {
+    label: "Freelance hiring",
+    text: "Hi Ngbaronye,\n\nI'm reaching out because I'm looking for a talented freelance developer for an upcoming project, and your portfolio really stood out to me. The craftsmanship and attention to detail in your work is exactly what we're looking for.\n\nWe're a [company/startup] working on [brief project description], and we need a skilled frontend and API developer to help us build and ship key features. The engagement would involve React/TypeScript development, API integration, and ensuring a polished, responsive user experience.\n\nI'd love to discuss the full scope of work, expected timeline, budget, and any other details with you. We're open to both hourly and project-based arrangements, depending on what works best for you.\n\nCould we schedule a brief introductory call to explore this further? Please let me know your availability and preferred rate.\n\nThank you for your time!\n\nBest,\n[Your Name]",
+  },
+  {
+    label: "Portfolio question",
+    text: "Hi Ngbaronye,\n\nI've been exploring your portfolio and I'm genuinely impressed by the range and depth of your projects — from the MarketAI dashboard to the Emotional Support Model, each one demonstrates a strong command of modern web technologies and thoughtful design.\n\nI had a few questions I was hoping you could help me with. I'm particularly curious about the tech stack and architecture decisions behind some of your projects. For example, how did you approach the API design and data flow in your dashboard projects? And what was your experience like integrating AI/NLP models into web applications?\n\nI'm a fellow developer looking to learn and grow, and any insights you could share would be incredibly valuable. I'd also love to know if you're open to collaborating on open-source projects or mentoring.\n\nThanks so much for your time, and keep up the amazing work!\n\nCheers,\n[Your Name]",
+  },
 ];
 
 const contacts = [
