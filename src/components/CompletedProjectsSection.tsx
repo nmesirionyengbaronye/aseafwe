@@ -43,30 +43,9 @@ const clientProjects = [
     status: "Delivered",
     link: "https://salubrity-superior-farms.vercel.app/",
   },
-  {
-    title: "Client Project — E-Commerce Platform",
-    industry: "Retail / E-Commerce",
-    description: "A fully responsive e-commerce storefront with product catalog, cart system, and payment integration for a retail client.",
-    tech: ["React", "TypeScript", "Stripe", "Tailwind CSS"],
-    status: "Delivered",
-  },
-  {
-    title: "Client Project — Business Dashboard",
-    industry: "Finance / Analytics",
-    description: "A custom analytics dashboard for a finance startup, featuring real-time data visualization, report generation, and role-based access.",
-    tech: ["React", "Node.js", "PostgreSQL", "Chart.js"],
-    status: "Delivered",
-  },
-  {
-    title: "Client Project — Booking System",
-    industry: "Healthcare / Services",
-    description: "An appointment booking and management system for a healthcare provider with calendar integration, reminders, and patient portal.",
-    tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
-    status: "Delivered",
-  },
 ];
 
-const INITIAL_COUNT = 3;
+const INITIAL_COUNT = 6;
 
 const container = {
   hidden: {},
