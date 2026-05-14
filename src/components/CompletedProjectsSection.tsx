@@ -36,6 +36,14 @@ const clientProjects = [
     link: "https://clothes-stores-one.vercel.app/",
   },
   {
+    title: "Salubrity Superior Farms",
+    industry: "Agriculture / Wellness",
+    description: "A premium farm produce and wellness platform showcasing organic crops, livestock, and health-focused agricultural products with direct farm-to-table ordering.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+    status: "Delivered",
+    link: "https://salubrity-superior-farms.vercel.app/",
+  },
+  {
     title: "Client Project — E-Commerce Platform",
     industry: "Retail / E-Commerce",
     description: "A fully responsive e-commerce storefront with product catalog, cart system, and payment integration for a retail client.",
@@ -83,7 +91,7 @@ const CompletedProjectsSection = () => {
         transition={{ duration: 0.6 }}
       >
         <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-foreground mb-4">
-          <span className="font-mono text-primary text-lg">04.</span>
+          <span className="font-mono text-primary text-lg">03.</span>
           Completed Projects
           <span className="h-px flex-1 bg-border max-w-xs" />
         </h2>
