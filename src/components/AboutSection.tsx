@@ -3,7 +3,7 @@ import profileImg from "@/assets/profile.jpg";
 import { Code2, Cpu, Globe, Rocket } from "lucide-react";
 
 const highlights = [
-  { label: "Experience", value: "2+ Years", icon: Code2 },
+  { label: "Experience", value: "3 Years", icon: Code2 },
   { label: "University", value: "FUTO (Mechatronics)", icon: Cpu },
   { label: "Location", value: "Nigeria", icon: Globe },
   { label: "Origin", value: "Umuahia, Abia", icon: Rocket },
@@ -31,7 +31,7 @@ const AboutSection = () => (
             Hello! I'm Ngbaronye Nmesirionye, a passionate developer and Mechatronics Engineering student at the
             <span className="text-primary font-medium"> Federal University of Technology, Owerri (FUTO)</span>.
             Originally from <span className="text-primary font-medium">Umuahia, Abia State, Nigeria</span>,
-            I've spent the last 2+ years honing my skills in frontend development and API engineering.
+            I've spent the last 3 years honing my skills in frontend development and API engineering.
           </p>
           <p>
             I love working at the intersection of design and engineering — taking ideas from concept to a fully functional product.

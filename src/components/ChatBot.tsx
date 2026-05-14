@@ -58,7 +58,7 @@ type QAEntry = {
 const qaData: QAEntry[] = [
   {
     keywords: ["who", "about", "name", "introduce", "yourself"],
-    answer: "I'm Ngbaronye Nmesirionye — a Frontend & API Developer and Mechatronics Engineering student at FUTO. I have 2+ years of experience building web apps and APIs.",
+    answer: "I'm Ngbaronye Nmesirionye — a Frontend & API Developer and Mechatronics Engineering student at FUTO. I have 3 years of experience building web apps and APIs.",
     action: () => scrollToSection("about"),
     actionLabel: "Go to About section",
   },

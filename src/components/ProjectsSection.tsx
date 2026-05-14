@@ -237,7 +237,7 @@ const ProjectsSection = () => (
       transition={{ duration: 0.6 }}
     >
       <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-foreground mb-12">
-        <span className="font-mono text-primary text-lg">03.</span>
+        <span className="font-mono text-primary text-lg">04.</span>
         Open Source Projects
         <span className="h-px flex-1 bg-border max-w-xs" />
       </h2>
