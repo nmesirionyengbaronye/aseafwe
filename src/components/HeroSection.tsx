@@ -75,7 +75,7 @@ const generateCV = () => {
   y += 4;
 
   addSection("PROFESSIONAL SUMMARY");
-  addLine("Passionate and detail-oriented frontend and API developer with over 2 years of hands-on experience building accessible, performant, and beautifully designed web applications and robust backend APIs. Proficient in modern JavaScript frameworks, responsive design, and RESTful/GraphQL API architecture.");
+  addLine("Passionate and detail-oriented frontend and API developer with over 3 years of hands-on experience building accessible, performant, and beautifully designed web applications and robust backend APIs. Proficient in modern JavaScript frameworks, responsive design, and RESTful/GraphQL API architecture.");
   y += 2;
   addLine("Currently pursuing a Bachelor of Engineering in Mechatronics at the Federal University of Technology, Owerri (FUTO), combining software engineering expertise with a strong foundation in robotics, embedded systems, and control engineering. Originally from Umuahia, Abia State, Nigeria.");
   y += 2;
@@ -414,7 +414,7 @@ const HeroSection = () => {
             className="text-muted-foreground text-lg max-w-xl mt-6 leading-relaxed"
           >
             A Mechatronics Engineering student at Federal University of Technology Owerri
-            with 2+ years of experience crafting exceptional digital experiences.
+            with 3 years of experience crafting exceptional digital experiences.
             I build accessible, performant, and beautifully designed web apps & robust APIs.
           </motion.p>
 
