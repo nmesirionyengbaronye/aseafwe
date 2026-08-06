@@ -1,11 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Mail, ArrowDown, Twitter, Download, Eye } from "lucide-react";
+import { Github, Mail, ArrowDown, Twitter, Download, Eye, Linkedin } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { jsPDF } from "jspdf";
 import profileImg from "@/assets/profile.jpg";
 
 const socials = [
   { icon: Github, href: "https://github.com/Panther0508", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/ngbaronye-nmesirionye-31339b410/", label: "LinkedIn" },
   { icon: Twitter, href: "https://x.com/Pantherlord0508", label: "X" },
   { icon: Mail, href: "mailto:nmesirionyengbaronye@gmail.com", label: "Email" },
 ];
@@ -13,269 +14,291 @@ const socials = [
 const roles = [
   "Frontend Developer",
   "API Engineer",
+  "AI Application Builder",
   "UI/UX Enthusiast",
   "Robotics Enthusiast",
-  "Open Source Contributor",
 ];
 
 const generateCV = () => {
-  const doc = new jsPDF();
-  const pageWidth = doc.internal.pageSize.getWidth();
-  let y = 20;
+  const doc = new jsPDF({ unit: "mm", format: "a4" });
+  const W = doc.internal.pageSize.getWidth();
+  const H = doc.internal.pageSize.getHeight();
+  const M = 15; // margin
+  const GOLD: [number, number, number] = [161, 130, 38];
+  const INK: [number, number, number] = [26, 26, 26];
+  const BODY: [number, number, number] = [55, 55, 55];
+  const MUTED: [number, number, number] = [110, 110, 110];
+  let y = 0;
 
-  const addSection = (title: string) => {
-    if (y > 250) { doc.addPage(); y = 20; }
-    y += 8;
+  const ensure = (needed = 10) => {
+    if (y + needed > H - M) {
+      doc.addPage();
+      y = M;
+    }
+  };
+
+  const section = (title: string) => {
+    ensure(20);
+    y += 6;
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(13);
-    doc.setTextColor(180, 150, 50);
-    doc.text(title, 14, y);
-    y += 2;
-    doc.setDrawColor(180, 150, 50);
-    doc.line(14, y, pageWidth - 14, y);
-    y += 7;
-    doc.setTextColor(40, 40, 40);
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
-  };
-
-  const addLine = (text: string, indent = 14) => {
-    if (y > 275) { doc.addPage(); y = 20; }
-    const lines = doc.splitTextToSize(text, pageWidth - indent - 14);
-    doc.text(lines, indent, y);
-    y += lines.length * 5.5;
-  };
-
-  const addBullet = (text: string, indent = 20) => {
-    if (y > 275) { doc.addPage(); y = 20; }
-    doc.text("•", indent - 4, y);
-    const lines = doc.splitTextToSize(text, pageWidth - indent - 14);
-    doc.text(lines, indent, y);
-    y += lines.length * 5.5;
-  };
-
-  // ===== PAGE 1: HEADER & PROFILE =====
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(24);
-  doc.setTextColor(30, 30, 30);
-  doc.text("NGBARONYE NMESIRIONYE", pageWidth / 2, y, { align: "center" });
-  y += 9;
-  doc.setFontSize(12);
-  doc.setTextColor(180, 150, 50);
-  doc.text("Frontend Developer | API Engineer | Robotics Enthusiast", pageWidth / 2, y, { align: "center" });
-  y += 5;
-  doc.setFontSize(9);
-  doc.setTextColor(100, 100, 100);
-  doc.text("nmesirionyengbaronye@gmail.com  |  07040369525  |  github.com/Panther0508  |  x.com/Pantherlord0508", pageWidth / 2, y + 4, { align: "center" });
-  y += 6;
-  doc.setDrawColor(180, 150, 50);
-  doc.setLineWidth(0.5);
-  doc.line(14, y, pageWidth - 14, y);
-  doc.setLineWidth(0.2);
-  y += 4;
-
-  addSection("PROFESSIONAL SUMMARY");
-  addLine("Passionate and detail-oriented frontend and API developer with over 3 years of hands-on experience building accessible, performant, and beautifully designed web applications and robust backend APIs. Proficient in modern JavaScript frameworks, responsive design, and RESTful/GraphQL API architecture.");
-  y += 2;
-  addLine("Currently pursuing a Bachelor of Engineering in Mechatronics at the Federal University of Technology, Owerri (FUTO), combining software engineering expertise with a strong foundation in robotics, embedded systems, and control engineering. Originally from Umuahia, Abia State, Nigeria.");
-  y += 2;
-  addLine("Driven by a deep commitment to open-source contribution, continuous learning, and leveraging technology to solve real-world problems. Adept at translating complex requirements into elegant, user-friendly interfaces and scalable backend solutions.");
-
-  addSection("EDUCATION");
-  doc.setFont("helvetica", "bold");
-  addLine("Federal University of Technology, Owerri (FUTO)");
-  doc.setFont("helvetica", "normal");
-  addLine("Bachelor of Engineering (B.Eng) — Mechatronics Engineering", 20);
-  addLine("Status: Currently Enrolled (In Progress)", 20);
-  y += 2;
-  doc.setFont("helvetica", "italic");
-  addLine("Relevant Coursework:", 20);
-  doc.setFont("helvetica", "normal");
-  addBullet("Control Systems Engineering & Automation", 26);
-  addBullet("Embedded Systems Design & Programming", 26);
-  addBullet("Digital Signal Processing & Microcontrollers", 26);
-  addBullet("Computer-Aided Design (CAD) & Simulation", 26);
-  addBullet("Data Structures & Algorithms", 26);
-  addBullet("Engineering Mathematics & Applied Physics", 26);
-
-  addSection("TECHNICAL SKILLS");
-  const skillCategories = [
-    ["Frontend Development", "React.js, Next.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Framer Motion, Responsive Design, Progressive Web Apps (PWA), Accessibility (WCAG), Component Libraries (shadcn/ui, Material UI)"],
-    ["API & Backend", "Node.js, Express.js, REST API Design & Development, GraphQL, PostgreSQL, MongoDB, Supabase, Firebase, Python (Flask, FastAPI), Authentication & Authorization (JWT, OAuth 2.0)"],
-    ["Tools & DevOps", "Git & GitHub, Docker, CI/CD Pipelines (GitHub Actions), Vite, Webpack, Figma (UI/UX Design), Postman, VS Code, Linux (Ubuntu), Vercel, Render, Netlify"],
-    ["Robotics & Embedded", "Arduino (C/C++), Raspberry Pi, Embedded C, Sensors & Actuators, PID Control Systems, MATLAB/Simulink, 3D Printing & Prototyping"],
-    ["Soft Skills", "Problem Solving, Team Collaboration, Technical Writing, Project Management, Agile/Scrum Methodology, Communication, Mentoring"],
-  ];
-  skillCategories.forEach(([cat, items]) => {
-    if (y > 260) { doc.addPage(); y = 20; }
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(10);
-    doc.text(`${cat}:`, 14, y);
+    doc.setFontSize(11);
+    doc.setTextColor(...GOLD);
+    doc.text(title.toUpperCase(), M, y);
+    y += 1.8;
+    doc.setDrawColor(...GOLD);
+    doc.setLineWidth(0.4);
+    doc.line(M, y, W - M, y);
+    doc.setLineWidth(0.2);
     y += 5.5;
     doc.setFont("helvetica", "normal");
-    const lines = doc.splitTextToSize(items, pageWidth - 20 - 14);
-    doc.text(lines, 20, y);
-    y += lines.length * 5.5 + 3;
-  });
+    doc.setFontSize(9.5);
+    doc.setTextColor(...BODY);
+  };
 
-  // ===== PROJECTS (Detailed) =====
-  addSection("PROJECTS");
+  const para = (text: string, indent = M, size = 9.5) => {
+    doc.setFontSize(size);
+    const lines = doc.splitTextToSize(text, W - indent - M);
+    lines.forEach((line: string) => {
+      ensure(6);
+      doc.text(line, indent, y);
+      y += 4.6;
+    });
+  };
 
-  const projects = [
+  const bullet = (text: string, indent = M + 4) => {
+    doc.setFontSize(9.5);
+    const lines = doc.splitTextToSize(text, W - indent - M - 2);
+    lines.forEach((line: string, i: number) => {
+      ensure(6);
+      if (i === 0) {
+        doc.setTextColor(...GOLD);
+        doc.text("\u2022", indent - 3.5, y);
+        doc.setTextColor(...BODY);
+      }
+      doc.text(line, indent, y);
+      y += 4.6;
+    });
+  };
+
+  const roleHeader = (title: string, org: string, period: string) => {
+    ensure(14);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(10.5);
+    doc.setTextColor(...INK);
+    doc.text(title, M, y);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(9);
+    doc.setTextColor(...MUTED);
+    doc.text(period, W - M, y, { align: "right" });
+    y += 4.4;
+    doc.setFont("helvetica", "italic");
+    doc.setFontSize(9.5);
+    doc.setTextColor(...BODY);
+    doc.text(org, M, y);
+    y += 4.6;
+    doc.setFont("helvetica", "normal");
+  };
+
+  // ===================== HEADER =====================
+  doc.setFillColor(18, 18, 18);
+  doc.rect(0, 0, W, 34, "F");
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(23);
+  doc.setTextColor(255, 255, 255);
+  doc.text("NGBARONYE NMESIRIONYE", W / 2, 14, { align: "center" });
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.setTextColor(212, 175, 55);
+  doc.text(
+    "Frontend Engineer  |  API & Backend Developer  |  AI Application Builder",
+    W / 2,
+    21,
+    { align: "center" },
+  );
+  doc.setFontSize(8.2);
+  doc.setTextColor(215, 215, 215);
+  doc.text(
+    "nmesirionyengbaronye@gmail.com  |  +234 704 036 9525  |  Owerri / Umuahia, Nigeria  |  Open to Remote",
+    W / 2,
+    26.5,
+    { align: "center" },
+  );
+  doc.text(
+    "linkedin.com/in/ngbaronye-nmesirionye-31339b410  |  github.com/Panther0508  |  x.com/Pantherlord0508",
+    W / 2,
+    31,
+    { align: "center" },
+  );
+  y = 40;
+
+  // ===================== SUMMARY =====================
+  section("Professional Summary");
+  para(
+    "Frontend and API developer with 3+ years of hands-on experience shipping production web applications and REST/GraphQL services. Delivered 10+ live products for clients across e-commerce, hospitality, agriculture and electronics, plus AI-driven platforms built with Python, NLP and machine learning. Recognised for creativity at the Hack-Nation Global AI Hackathon #6 (2026) for RIE - Resistance Intelligence Engine. Currently completing a B.Eng in Mechatronics Engineering at FUTO, pairing software engineering with control systems and embedded expertise. Strong bias toward measurable performance, accessibility (WCAG) and clean, maintainable architecture.",
+  );
+
+  // ===================== CORE COMPETENCIES =====================
+  section("Core Competencies");
+  const comps = [
+    "React & Next.js",
+    "TypeScript",
+    "REST & GraphQL API Design",
+    "Node.js / Express",
+    "Python (FastAPI, Flask)",
+    "PostgreSQL & Supabase",
+    "Tailwind CSS & Design Systems",
+    "Web Performance & Accessibility",
+    "AI / NLP Integration",
+    "CI/CD & Docker",
+    "Authentication (JWT, OAuth 2.0)",
+    "Embedded Systems & Robotics",
+  ];
+  const colW = (W - M * 2) / 3;
+  for (let i = 0; i < comps.length; i += 3) {
+    ensure(6);
+    doc.setFontSize(9.5);
+    doc.setTextColor(...BODY);
+    for (let c = 0; c < 3; c++) {
+      const item = comps[i + c];
+      if (!item) continue;
+      const x = M + c * colW;
+      doc.setTextColor(...GOLD);
+      doc.text("\u2022", x, y);
+      doc.setTextColor(...BODY);
+      doc.text(item, x + 3.2, y);
+    }
+    y += 5;
+  }
+
+  // ===================== EXPERIENCE =====================
+  section("Professional Experience");
+  roleHeader("Freelance Frontend & API Developer", "Independent / Remote", "2022 - Present");
+  bullet("Designed, built and deployed 10+ production web applications for clients in e-commerce, hospitality, agriculture and consumer electronics, each shipped live and maintained post-launch.");
+  bullet("Cut initial page load times by up to 45% through code-splitting, image optimisation, request caching and pagination on data-heavy interfaces.");
+  bullet("Architected and documented REST APIs with structured error handling, input validation, logging and JWT/OAuth 2.0 authentication.");
+  bullet("Translated Figma designs into pixel-accurate, fully responsive interfaces that pass WCAG contrast and keyboard-navigation checks.");
+  bullet("Owned full delivery lifecycle - requirements, architecture, implementation, deployment (Vercel/Render/Netlify) and ongoing support - communicating directly with non-technical stakeholders.");
+  y += 2;
+
+  roleHeader("AI Application Developer (Project-Based)", "Self-Directed & Hackathon Teams", "2023 - Present");
+  bullet("Built RIE - Resistance Intelligence Engine at the Hack-Nation Global AI Hackathon #6, delivering a working AI product and live pitch within 48 hours; recognised for creativity of concept and execution.");
+  bullet("Developed NLP-powered products including an emotional-support conversational model and an AI resume screening tool, covering sentiment analysis, keyword extraction and candidate scoring.");
+  bullet("Served ML models behind FastAPI/Flask endpoints consumed by React frontends, with streaming responses and context retention across sessions.");
+  y += 2;
+
+  roleHeader("Open Source Contributor", "GitHub - github.com/Panther0508", "2023 - Present");
+  bullet("Contribute pull requests for bug fixes, features and documentation across community repositories; participate in code review with distributed teams.");
+  bullet("Maintain personal open-source repositories with clear READMEs, issue triage and reproducible setup instructions.");
+
+  // ===================== SELECTED PROJECTS =====================
+  section("Selected Projects");
+
+  const projects: { name: string; meta: string; link?: string; bullets: string[] }[] = [
     {
-      name: "MarketAI API — Market Intelligence Dashboard",
-      period: "2024 – Present",
-      tech: "React, TypeScript, Tailwind CSS, REST APIs, AI/ML Integration",
+      name: "RIE - Resistance Intelligence Engine",
+      meta: "Hack-Nation Global AI Hackathon #6, 2026  |  Python, NLP, LLM orchestration, React",
       bullets: [
-        "Designed and developed an elite market intelligence dashboard featuring real-time data streams, interactive charts, and AI-powered predictive analytics for market trends.",
-        "Implemented WebSocket connections for live data feeds, ensuring sub-second latency on market updates and notifications.",
-        "Built a modular component architecture enabling plug-and-play integration of new data sources and visualization widgets.",
-        "Integrated AI-powered analytics engine for automated trend detection, anomaly alerts, and forecasting models.",
-        "Deployed on Render with CI/CD pipeline for automated testing and deployment workflows.",
+        "AI intelligence engine built and pitched in a 48-hour global hackathon; recognised for creativity among international teams.",
+        "Combined NLP pipelines with real-time data processing and a lightweight React interface for exploratory querying.",
       ],
     },
     {
-      name: "Developer News Dashboard — Tech News Aggregator",
-      period: "2024 – Present",
-      tech: "React, TypeScript, REST APIs, Tailwind CSS",
+      name: "Client Web Platforms (5 live products)",
+      meta: "React, TypeScript, Tailwind CSS, REST APIs",
+      link: "peaceful-nachi.vercel.app  |  e-v-eel-electronics.vercel.app  |  comfort-haven-eight.vercel.app  |  clothes-stores-one.vercel.app  |  salubrity-superior-farms.vercel.app",
       bullets: [
-        "Built a centralized news aggregation platform for developers, pulling real-time articles from multiple tech news APIs and RSS feeds.",
-        "Implemented advanced filtering and search functionality, allowing users to sort news by category, source, date, and relevance.",
-        "Designed a clean, distraction-free reading interface with dark/light mode support and responsive layout for all devices.",
-        "Added bookmarking and reading history features for personalized news consumption and tracking.",
-        "Optimized API calls with request caching and pagination to minimize load times and bandwidth usage.",
+        "Shipped storefronts, hospitality booking and agribusiness sites with responsive layouts, product catalogues and enquiry flows.",
+        "Reusable component library and shared design tokens reduced build time for each new client site by roughly 30%.",
       ],
     },
     {
-      name: "E-Library — Digital Library Management System",
-      period: "2024",
-      tech: "React, TypeScript, Tailwind CSS, REST APIs",
+      name: "MarketAI - Market Intelligence Dashboard",
+      meta: "React, TypeScript, WebSockets, REST APIs, AI analytics",
       bullets: [
-        "Developed a comprehensive digital library application for browsing, searching, and managing an extensive collection of books online.",
-        "Implemented full-text search with fuzzy matching, category filters, and author-based navigation for intuitive book discovery.",
-        "Built a responsive, card-based UI showcasing book covers, descriptions, ratings, and availability status.",
-        "Designed user authentication flow for personalized bookshelves, reading lists, and borrowing history.",
-        "Created an admin dashboard for library management including book CRUD operations, user management, and analytics.",
+        "Real-time market dashboard streaming live data with sub-second update latency via WebSocket connections.",
+        "Modular widget architecture allowing new data sources and visualisations to be added without touching core code.",
+        "Integrated predictive analytics for trend detection and anomaly alerting; deployed with CI/CD on Render.",
       ],
     },
     {
-      name: "Emotional Support Model — AI Chatbot",
-      period: "2024",
-      tech: "Python, NLP, Machine Learning, TensorFlow, Flask",
+      name: "AI Resume Analyzer",
+      meta: "Python, FastAPI, NLP, Machine Learning, React",
       bullets: [
-        "Engineered an AI-powered emotional support chatbot leveraging Natural Language Processing (NLP) for empathetic, context-aware conversational responses.",
-        "Trained custom sentiment analysis models to detect user emotional states and tailor responses accordingly.",
-        "Implemented conversation memory and context tracking for coherent multi-turn therapeutic dialogues.",
-        "Built a clean web interface with real-time message streaming and typing indicators for natural interaction flow.",
-        "Deployed as a REST API service on Render, enabling integration with multiple frontend applications.",
+        "Automated resume screening with NLP keyword extraction and weighted skills matching against job descriptions.",
+        "Recruiter dashboard with side-by-side candidate comparison, score breakdowns and generated summary reports.",
       ],
     },
     {
-      name: "IntentScope — Data Exploration Platform",
-      period: "2023 – 2024",
-      tech: "Python, FastAPI, NLP, Data Science, Jupyter Integration",
+      name: "IntentScope - Data Exploration Platform",
+      meta: "Python, FastAPI, NLP, Data Visualisation",
       bullets: [
-        "Created a data exploration and interactive code execution platform designed for API developers and data scientists.",
-        "Built an intuitive interface for writing, executing, and visualizing Python code with real-time output rendering.",
-        "Implemented natural language query processing using NLP to translate plain English questions into executable data queries.",
-        "Integrated data visualization libraries for automatic chart generation based on query results and dataset characteristics.",
-        "Designed a collaborative workspace supporting multiple users with shared notebooks and version history.",
+        "Natural-language querying that translates plain English questions into executable data queries with auto-generated charts.",
+        "Collaborative workspace with shared notebooks, live code execution and version history.",
       ],
     },
     {
-      name: "AI Resume Analyzer — Intelligent Screening Tool",
-      period: "2023 – 2024",
-      tech: "Python, FastAPI, NLP, Machine Learning, Full-Stack",
+      name: "Developer News Dashboard & E-Library",
+      meta: "React, TypeScript, REST APIs, Tailwind CSS",
       bullets: [
-        "Developed an intelligent resume screening tool for employers with automated scoring, ranking, and filtering of candidate applications.",
-        "Implemented NLP-based keyword extraction and skills matching against job descriptions with configurable weighting.",
-        "Built a dashboard for HR professionals to review candidates with side-by-side comparison and detailed scoring breakdowns.",
-        "Created automated report generation with candidate summaries, strengths, weaknesses, and recommendation scores.",
-        "Integrated with email APIs for automated candidate communication and interview scheduling workflows.",
+        "News aggregator unifying multiple tech APIs and RSS feeds with advanced filtering, bookmarking and reading history.",
+        "Digital library with fuzzy full-text search, authenticated bookshelves and an admin dashboard for catalogue management.",
       ],
     },
   ];
 
   projects.forEach((p) => {
-    if (y > 240) { doc.addPage(); y = 20; }
+    ensure(20);
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(11);
-    addLine(p.name);
-    doc.setFont("helvetica", "italic");
-    doc.setFontSize(9);
-    addLine(`${p.period}  |  ${p.tech}`, 20);
-    doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
-    y += 1;
-    p.bullets.forEach((b) => {
-      addBullet(b, 24);
-    });
-    y += 4;
+    doc.setTextColor(...INK);
+    para(p.name, M, 10);
+    doc.setFont("helvetica", "italic");
+    doc.setTextColor(...MUTED);
+    para(p.meta, M, 8.6);
+    if (p.link) para(p.link, M, 8);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(...BODY);
+    p.bullets.forEach((b) => bullet(b));
+    y += 3;
   });
 
-  // ===== CERTIFICATIONS & LEARNING =====
-  addSection("CERTIFICATIONS & CONTINUOUS LEARNING");
-  addBullet("freeCodeCamp — Responsive Web Design Certification");
-  addBullet("freeCodeCamp — JavaScript Algorithms and Data Structures");
-  addBullet("Udemy — The Complete React Developer Course (with Hooks & Redux)");
-  addBullet("Coursera — Python for Everybody Specialization");
-  addBullet("YouTube & Self-Study — Advanced TypeScript, System Design, Docker & DevOps Fundamentals");
-  addBullet("Ongoing — Cloud Architecture (AWS/GCP), Advanced Machine Learning, Embedded Systems Programming");
+  // ===================== EDUCATION =====================
+  section("Education");
+  roleHeader(
+    "B.Eng, Mechatronics Engineering",
+    "Federal University of Technology, Owerri (FUTO), Nigeria",
+    "In Progress",
+  );
+  bullet("Relevant coursework: Control Systems & Automation, Embedded Systems Design, Digital Signal Processing, Data Structures & Algorithms, CAD & Simulation, Engineering Mathematics.");
 
-  // ===== EXPERIENCE / FREELANCE =====
-  addSection("PROFESSIONAL EXPERIENCE");
-  doc.setFont("helvetica", "bold");
-  addLine("Freelance Frontend & API Developer");
-  doc.setFont("helvetica", "italic");
-  addLine("Self-Employed  |  2022 – Present", 20);
-  doc.setFont("helvetica", "normal");
-  y += 1;
-  addBullet("Delivered 10+ custom web applications for clients across e-commerce, education, and fintech sectors.", 24);
-  addBullet("Collaborated with designers and project managers to translate wireframes and mockups into pixel-perfect, responsive interfaces.", 24);
-  addBullet("Built and maintained RESTful APIs handling thousands of daily requests with robust error handling and logging.", 24);
-  addBullet("Provided ongoing maintenance, performance optimization, and feature enhancements for client projects.", 24);
-  addBullet("Managed full project lifecycles from requirements gathering and architecture planning through deployment and post-launch support.", 24);
-  y += 3;
+  // ===================== AWARDS & CERTIFICATIONS =====================
+  section("Awards & Certifications");
+  bullet("Hack-Nation Global AI Hackathon #6 (July 2026) - recognised for creativity for RIE - Resistance Intelligence Engine. Certificate ID 4AD2609F8D6094C3.");
+  bullet("freeCodeCamp - Responsive Web Design; JavaScript Algorithms and Data Structures.");
+  bullet("Udemy - The Complete React Developer Course (Hooks, Redux).");
+  bullet("Coursera - Python for Everybody Specialization.");
+  bullet("Ongoing study: Advanced TypeScript, System Design, Docker & DevOps, Cloud Architecture (AWS/GCP).");
 
-  doc.setFont("helvetica", "bold");
-  addLine("Open Source Contributor");
-  doc.setFont("helvetica", "italic");
-  addLine("GitHub  |  2023 – Present", 20);
-  doc.setFont("helvetica", "normal");
-  y += 1;
-  addBullet("Actively contribute to open-source projects on GitHub, submitting pull requests for bug fixes, feature enhancements, and documentation improvements.", 24);
-  addBullet("Maintain personal open-source repositories with comprehensive README documentation, issue tracking, and community engagement.", 24);
-  addBullet("Participate in code reviews and collaborative development with distributed teams across multiple time zones.", 24);
+  // ===================== ADDITIONAL =====================
+  section("Additional Information");
+  bullet("Languages: English (professional, written and spoken); Igbo (native).");
+  bullet("Interests: robotics and mechatronics prototyping, open source, system design, applied AI/ML, technical writing.");
+  bullet("References available on request.");
 
-  // ===== ACHIEVEMENTS =====
-  addSection("KEY ACHIEVEMENTS & HIGHLIGHTS");
-  addBullet("Successfully delivered 10+ production-grade web applications and APIs for diverse clients and personal projects.");
-  addBullet("Built AI-powered applications integrating machine learning models for real-time data analysis and natural language processing.");
-  addBullet("Maintained a consistent GitHub contribution streak, demonstrating commitment to continuous coding and open-source development.");
-  addBullet("Developed cross-platform solutions optimized for performance across desktop, tablet, and mobile devices.");
-  addBullet("Received positive client feedback for delivering projects ahead of schedule with attention to detail and code quality.");
-  addBullet("Mentored junior developers in modern web technologies, code best practices, and debugging methodologies.");
-
-  // ===== LANGUAGES =====
-  addSection("LANGUAGES");
-  addBullet("English — Professional Proficiency (Written & Spoken)");
-  addBullet("Igbo — Native Speaker");
-
-  // ===== INTERESTS =====
-  addSection("INTERESTS & ACTIVITIES");
-  addBullet("Robotics & Mechatronics: Building hobby robots, experimenting with sensors, actuators, and control algorithms.");
-  addBullet("Open Source: Contributing to community projects and maintaining personal repositories on GitHub.");
-  addBullet("System Design: Studying distributed systems architecture, scalability patterns, and cloud infrastructure.");
-  addBullet("AI & Machine Learning: Exploring NLP, computer vision, and reinforcement learning applications.");
-  addBullet("Technical Writing: Documenting projects, writing tutorials, and sharing knowledge through blog posts.");
-  addBullet("Community: Participating in developer meetups, hackathons, and online tech communities.");
-
-  // ===== REFERENCES =====
-  addSection("REFERENCES");
-  addLine("Available upon request.");
+  // ===================== FOOTER =====================
+  const pages = doc.getNumberOfPages();
+  for (let i = 1; i <= pages; i++) {
+    doc.setPage(i);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(7.5);
+    doc.setTextColor(...MUTED);
+    doc.text("Ngbaronye Nmesirionye - Curriculum Vitae", M, H - 8);
+    doc.text(`Page ${i} of ${pages}`, W - M, H - 8, { align: "right" });
+  }
 
   doc.save("Ngbaronye_Nmesirionye_CV.pdf");
 };
+
 
 const HeroSection = () => {
   const [roleIndex, setRoleIndex] = useState(0);

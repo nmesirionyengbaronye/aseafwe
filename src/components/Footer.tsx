@@ -1,10 +1,12 @@
-import { Github, Twitter, Mail } from "lucide-react";
+import { Github, Twitter, Mail, Linkedin } from "lucide-react";
 
 const socials = [
   { icon: Github, href: "https://github.com/Panther0508" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/ngbaronye-nmesirionye-31339b410/" },
   { icon: Twitter, href: "https://x.com/Pantherlord0508" },
   { icon: Mail, href: "mailto:nmesirionyengbaronye@gmail.com" },
 ];
+
 
 const Footer = () => (
   <footer className="py-10 border-t border-border">

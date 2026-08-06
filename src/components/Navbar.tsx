@@ -7,10 +7,12 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
   { label: "Client Work", href: "#completed-projects" },
+  { label: "Projects", href: "#projects" },
+  { label: "Awards", href: "#achievements" },
   { label: "Contact", href: "#contact" },
 ];
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
