@@ -22,7 +22,9 @@ const Index = () => {
         <SkillsSection />
         <CompletedProjectsSection />
         <ProjectsSection />
+        <AchievementsSection />
         <ContactSection />
+
         <Footer />
       </div>
       <ChatBot />
