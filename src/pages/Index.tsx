@@ -4,7 +4,9 @@ import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import CompletedProjectsSection from "@/components/CompletedProjectsSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import AchievementsSection from "@/components/AchievementsSection";
 import ContactSection from "@/components/ContactSection";
+
 import Footer from "@/components/Footer";
 import SpaceBackground from "@/components/SpaceBackground";
 import ChatBot from "@/components/ChatBot";
