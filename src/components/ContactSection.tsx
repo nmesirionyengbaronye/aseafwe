@@ -55,7 +55,7 @@ const ContactSection = () => (
         <span className="font-mono text-xs text-primary">Available for work</span>
       </motion.div>
 
-      <p className="font-mono text-primary text-sm mb-4">05. What's Next?</p>
+      <p className="font-mono text-primary text-sm mb-4">06. What's Next?</p>
       <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">Get In Touch</h2>
       <p className="text-muted-foreground leading-relaxed mb-10">
         I'm currently open to new opportunities and collaborations. Whether you have a project in mind,
