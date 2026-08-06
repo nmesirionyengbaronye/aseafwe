@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Github, Twitter, Send, Sparkles } from "lucide-react";
+import { Mail, MessageCircle, Github, Twitter, Send, Sparkles, Linkedin } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const templates = [
