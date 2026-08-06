@@ -40,8 +40,9 @@ const AchievementsSection = () => (
         className="flex items-center gap-4 mb-12"
       >
         <h2 className="text-2xl md:text-3xl font-bold text-foreground whitespace-nowrap">
-          <span className="font-mono text-primary text-xl mr-3">05.</span>
+          <span className="font-mono text-primary text-lg mr-3">05.</span>
           Awards &amp; Recognition
+
         </h2>
         <div className="h-px w-full bg-border" />
       </motion.div>
