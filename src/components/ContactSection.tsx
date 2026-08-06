@@ -22,7 +22,9 @@ const contacts = [
   { label: "WhatsApp", icon: MessageCircle, value: "07040369525", href: "https://wa.me/2347040369525", cta: "Chat on WhatsApp", hasTemplates: true },
   { label: "Telegram", icon: Send, value: "07040369525", href: "https://t.me/+2347040369525", cta: "Chat on Telegram", hasTemplates: false },
   { label: "GitHub", icon: Github, value: "Panther0508", href: "https://github.com/Panther0508", cta: "Visit GitHub", hasTemplates: false },
+  { label: "LinkedIn", icon: Linkedin, value: "ngbaronye-nmesirionye", href: "https://www.linkedin.com/in/ngbaronye-nmesirionye-31339b410/", cta: "Connect on LinkedIn", hasTemplates: false },
   { label: "X", icon: Twitter, value: "@Pantherlord0508", href: "https://x.com/Pantherlord0508", cta: "Visit X", hasTemplates: false },
+
 ];
 
 const buildHref = (contact: typeof contacts[0], templateText?: string) => {
