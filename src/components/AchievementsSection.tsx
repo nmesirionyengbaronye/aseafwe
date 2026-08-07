@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Trophy, Sparkles, ExternalLink, Users, Globe } from "lucide-react";
-import certificate from "@/assets/hacknation-certificate.png.asset.json";
+import certificate from "@/assets/hacknation-certificate.webp";
 
 const highlights = [
   {
@@ -49,7 +49,7 @@ const AchievementsSection = () => (
 
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <motion.a
-          href={certificate.url}
+          href={certificate}
           target="_blank"
           rel="noreferrer"
           initial={{ opacity: 0, scale: 0.96 }}
@@ -59,9 +59,11 @@ const AchievementsSection = () => (
           className="group block rounded-lg overflow-hidden border border-border bg-card/60 backdrop-blur-sm hover:border-primary/50 transition-colors shadow-[var(--shadow-glow)]"
         >
           <img
-            src={certificate.url}
+            src={certificate}
             alt="Hack-Nation Global AI Hackathon #6 certificate of participation awarded to Nmesirionye Ngbaronye for RIE — Resistance Intelligence Engine"
             loading="lazy"
+            width={1920}
+            height={1358}
             className="w-full bg-white"
           />
           <div className="flex items-center justify-between gap-2 px-4 py-3 border-t border-border">

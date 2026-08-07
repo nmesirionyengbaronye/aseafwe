@@ -8,8 +8,26 @@ import emotionalSupportImg from "@/assets/project-emotional-support.jpg";
 import marketaiImg from "@/assets/project-marketai.jpg";
 import resumeAnalyzerImg from "@/assets/project-resume-analyzer.jpg";
 import newsDashboardImg from "@/assets/project-news-dashboard.jpg";
+import rieImg from "@/assets/project-rie.jpg";
 
 const projects = [
+  {
+    title: "RIE — Resistance Intelligence Engine",
+    description: "Award-recognised AI intelligence engine built and pitched at the 6th Hack-Nation Global AI Hackathon, recognised for creativity of concept and execution.",
+    problem: "Teams tracking antimicrobial and systemic resistance signals work with scattered, unstructured reports, so emerging resistance patterns surface far too late to act on.",
+    solution: "RIE ingests unstructured resistance data, applies NLP and model orchestration to extract entities and trends, and surfaces ranked intelligence through a real-time query interface — built end to end in a 48-hour sprint.",
+    features: [
+      "NLP pipeline for entity extraction from unstructured reports",
+      "Model orchestration layer for reasoning over resistance signals",
+      "Real-time data pipeline with ranked intelligence output",
+      "Query interface for exploring patterns and trends",
+      "Shipped and pitched within a 48-hour global hackathon",
+    ],
+    tech: ["Python", "NLP", "AI", "Data Pipelines"],
+    github: "https://github.com/Panther0508/rie-submission",
+    live: "",
+    image: rieImg,
+  },
   {
     title: "MarketAI API",
     description: "An elite market intelligence dashboard with real-time data streams, AI-powered market synthesis, and trending product analytics.",
