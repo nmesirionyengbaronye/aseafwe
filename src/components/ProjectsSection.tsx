@@ -15,15 +15,15 @@ import hackathonTestsImg from "@/assets/project-hackathon-tests.jpg";
 const projects = [
   {
     title: "RIE — Resistance Intelligence Engine",
-    description: "Award-recognised AI intelligence engine built and pitched at the 6th Hack-Nation Global AI Hackathon, recognised for creativity of concept and execution.",
+    description: "Award-recognised AI intelligence engine — built solo in 24 hours at the 6th Hack-Nation Global AI Hackathon, chosen by the community to pitch live, and recognised for creativity of concept and execution.",
     problem: "Teams tracking antimicrobial and systemic resistance signals work with scattered, unstructured reports, so emerging resistance patterns surface far too late to act on.",
-    solution: "RIE ingests unstructured resistance data, applies NLP and model orchestration to extract entities and trends, and surfaces ranked intelligence through a real-time query interface — built end to end in a 48-hour sprint.",
+    solution: "RIE ingests unstructured resistance data, applies NLP and model orchestration to extract entities and trends, and surfaces ranked intelligence through a real-time query interface — designed, built and shipped solo inside a 24-hour sprint.",
     features: [
       "NLP pipeline for entity extraction from unstructured reports",
       "Model orchestration layer for reasoning over resistance signals",
       "Real-time data pipeline with ranked intelligence output",
       "Query interface for exploring patterns and trends",
-      "Shipped and pitched within a 48-hour global hackathon",
+      "Solo build shipped and pitched live within 24 hours",
     ],
     tech: ["Python", "NLP", "AI", "Data Pipelines"],
     github: "https://github.com/Panther0508/rie-submission",
