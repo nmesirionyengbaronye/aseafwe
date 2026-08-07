@@ -140,10 +140,41 @@ const AchievementsSection = () => (
               RIE — Resistance Intelligence Engine
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Built and pitched an AI intelligence engine during Hack-Nation&apos;s
-              global hackathon alongside builders from around the world, and was
-              recognised for the creativity of the concept and execution.
+              A solo build shipped in 24 hours at{" "}
+              <InstLink href="https://hack-nation.ai">Hack-Nation</InstLink>&apos;s
+              Global AI Hackathon, pitched live after being chosen by the
+              community, and recognised for the creativity of the concept and
+              execution. Built while studying Mechatronics Engineering at{" "}
+              <InstLink href="https://futo.edu.ng">
+                Federal University of Technology, Owerri (FUTO)
+              </InstLink>
+              , originally from{" "}
+              <InstLink href="https://abiastate.gov.ng">Abia State</InstLink>,
+              Nigeria.
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-8"
+          >
+            <p className="font-mono text-xs text-primary mb-3">Sponsored by:</p>
+            <div className="flex flex-wrap gap-2">
+              {sponsors.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-xs text-primary/80 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full hover:border-primary/60 hover:bg-primary/20 transition-colors"
+                >
+                  {s.name}
+                </a>
+              ))}
+            </div>
           </motion.div>
 
           <div className="space-y-5">
