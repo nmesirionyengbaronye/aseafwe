@@ -203,9 +203,18 @@ const generateCV = () => {
       ],
     },
     {
-      name: "Client Web Platforms (5 live products)",
+      name: "HallsSports FUTO - Stadium & Hall Booking Platform",
+      meta: "React, TypeScript, Tailwind CSS, Vercel",
+      link: "hallssports-futo.vercel.app  |  github.com/Panther0508/spark-stadium-builder",
+      bullets: [
+        "Built a campus sports facility booking platform replacing informal chat-based reservations with slot-based online booking.",
+        "Mobile-first responsive interface with facility catalogue, availability states and confirmation flows.",
+      ],
+    },
+    {
+      name: "Client Web Platforms (6 live products)",
       meta: "React, TypeScript, Tailwind CSS, REST APIs",
-      link: "peaceful-nachi.vercel.app  |  e-v-eel-electronics.vercel.app  |  comfort-haven-eight.vercel.app  |  clothes-stores-one.vercel.app  |  salubrity-superior-farms.vercel.app",
+      link: "peaceful-nachi.vercel.app  |  e-v-eel-electronics.vercel.app  |  comfort-haven-eight.vercel.app  |  clothes-stores-one.vercel.app  |  salubrity-superior-farms.vercel.app  |  hallssports-futo.vercel.app",
       bullets: [
         "Shipped storefronts, hospitality booking and agribusiness sites with responsive layouts, product catalogues and enquiry flows.",
         "Reusable component library and shared design tokens reduced build time for each new client site by roughly 30%.",
