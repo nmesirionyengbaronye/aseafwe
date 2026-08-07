@@ -9,6 +9,8 @@ import marketaiImg from "@/assets/project-marketai.jpg";
 import resumeAnalyzerImg from "@/assets/project-resume-analyzer.jpg";
 import newsDashboardImg from "@/assets/project-news-dashboard.jpg";
 import rieImg from "@/assets/project-rie.jpg";
+import stadiumImg from "@/assets/project-stadium.jpg";
+import hackathonTestsImg from "@/assets/project-hackathon-tests.jpg";
 
 const projects = [
   {
@@ -27,6 +29,23 @@ const projects = [
     github: "https://github.com/Panther0508/rie-submission",
     live: "",
     image: rieImg,
+  },
+  {
+    title: "HallsSports FUTO — Stadium & Hall Booking",
+    description: "A sports facility booking and management platform for halls and stadium spaces at FUTO, built as Spark Stadium Builder and deployed live for students and organisers.",
+    problem: "Booking sports halls and stadium slots on campus ran on informal chats and paper lists, causing double bookings, unclear availability and no record of who reserved what.",
+    solution: "A web platform that centralises facility listings, availability and reservations — organisers publish halls and slots, users browse and book, and everything stays visible in one dashboard-style interface.",
+    features: [
+      "Facility and hall catalogue with details and availability",
+      "Slot-based booking flow with clear confirmation states",
+      "Responsive layout built for mobile-first campus use",
+      "Component-driven React + TypeScript architecture",
+      "Deployed live on Vercel for real student usage",
+    ],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+    github: "https://github.com/Panther0508/spark-stadium-builder",
+    live: "https://hallssports-futo.vercel.app/home",
+    image: stadiumImg,
   },
   {
     title: "MarketAI API",
@@ -129,6 +148,23 @@ const projects = [
     github: "https://github.com/Panther0508/Ai-resume-analyzer",
     live: "https://ai-resume-analyzer-7ubo.onrender.com/login",
     image: resumeAnalyzerImg,
+  },
+  {
+    title: "Hackathon Test Lab",
+    description: "A working repository of hackathon challenge solutions, technical assessments and rapid prototypes used to sharpen problem-solving speed under time pressure.",
+    problem: "Hackathon and interview-style challenges demand fast, correct solutions across unfamiliar domains, and practice work usually ends up scattered and unreviewable.",
+    solution: "A consolidated lab of timed challenge solutions and experiments, kept in one repository so approaches, trade-offs and iterations stay reviewable and reusable.",
+    features: [
+      "Collection of timed hackathon and assessment solutions",
+      "Rapid prototypes across AI, API and frontend problems",
+      "Reusable patterns extracted from repeated challenge types",
+      "Documented approaches and trade-offs per solution",
+      "Continuously updated as new challenges are attempted",
+    ],
+    tech: ["Python", "JavaScript", "Algorithms", "Prototyping"],
+    github: "https://github.com/Panther0508/my-hackathon-tests",
+    live: "",
+    image: hackathonTestsImg,
   },
 ];
 

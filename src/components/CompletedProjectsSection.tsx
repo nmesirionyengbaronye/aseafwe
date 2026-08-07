@@ -12,6 +12,14 @@ const clientProjects = [
     link: "https://peaceful-nachi.vercel.app/",
   },
   {
+    title: "HallsSports FUTO — Facility Booking",
+    industry: "Sports / Campus Facilities",
+    description: "A live sports hall and stadium booking platform for FUTO, letting students and organisers browse facilities, check availability and reserve slots without the usual double-booking chaos.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+    status: "Delivered",
+    link: "https://hallssports-futo.vercel.app/home",
+  },
+  {
     title: "E.V.Eel Electronics — Gadget Store",
     industry: "Electronics / E-Commerce",
     description: "A product catalog and storefront for a trusted electronics dealer in Onitsha, featuring audio equipment, gadgets, and WhatsApp-integrated ordering.",
