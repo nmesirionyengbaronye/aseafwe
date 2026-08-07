@@ -181,7 +181,7 @@ const generateCV = () => {
   y += 2;
 
   roleHeader("AI Application Developer (Project-Based)", "Self-Directed & Hackathon Teams", "2023 - Present");
-  bullet("Built RIE - Resistance Intelligence Engine at the Hack-Nation Global AI Hackathon #6, delivering a working AI product and live pitch within 48 hours; recognised for creativity of concept and execution.");
+  bullet("Built RIE - Resistance Intelligence Engine at the Hack-Nation Global AI Hackathon #6, built solo and pitched live within 24 hours after being selected by the community; recognised for creativity of concept and execution.");
   bullet("Developed NLP-powered products including an emotional-support conversational model and an AI resume screening tool, covering sentiment analysis, keyword extraction and candidate scoring.");
   bullet("Served ML models behind FastAPI/Flask endpoints consumed by React frontends, with streaming responses and context retention across sessions.");
   y += 2;
@@ -198,14 +198,23 @@ const generateCV = () => {
       name: "RIE - Resistance Intelligence Engine",
       meta: "Hack-Nation Global AI Hackathon #6, 2026  |  Python, NLP, LLM orchestration, React",
       bullets: [
-        "AI intelligence engine built and pitched in a 48-hour global hackathon; recognised for creativity among international teams.",
+        "Solo-built AI intelligence engine shipped and pitched live in a 24-hour global hackathon; recognised for creativity among international teams.",
         "Combined NLP pipelines with real-time data processing and a lightweight React interface for exploratory querying.",
       ],
     },
     {
-      name: "Client Web Platforms (5 live products)",
+      name: "HallsSports FUTO - Stadium & Hall Booking Platform",
+      meta: "React, TypeScript, Tailwind CSS, Vercel",
+      link: "hallssports-futo.vercel.app  |  github.com/Panther0508/spark-stadium-builder",
+      bullets: [
+        "Built a campus sports facility booking platform replacing informal chat-based reservations with slot-based online booking.",
+        "Mobile-first responsive interface with facility catalogue, availability states and confirmation flows.",
+      ],
+    },
+    {
+      name: "Client Web Platforms (6 live products)",
       meta: "React, TypeScript, Tailwind CSS, REST APIs",
-      link: "peaceful-nachi.vercel.app  |  e-v-eel-electronics.vercel.app  |  comfort-haven-eight.vercel.app  |  clothes-stores-one.vercel.app  |  salubrity-superior-farms.vercel.app",
+      link: "peaceful-nachi.vercel.app  |  e-v-eel-electronics.vercel.app  |  comfort-haven-eight.vercel.app  |  clothes-stores-one.vercel.app  |  salubrity-superior-farms.vercel.app  |  hallssports-futo.vercel.app",
       bullets: [
         "Shipped storefronts, hospitality booking and agribusiness sites with responsive layouts, product catalogues and enquiry flows.",
         "Reusable component library and shared design tokens reduced build time for each new client site by roughly 30%.",

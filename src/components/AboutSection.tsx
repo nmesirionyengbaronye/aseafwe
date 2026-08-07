@@ -29,8 +29,23 @@ const AboutSection = () => (
         <div className="text-muted-foreground leading-relaxed space-y-4 text-base flex-1">
           <p>
             Hello! I'm Ngbaronye Nmesirionye, a passionate developer and Mechatronics Engineering student at the
-            <span className="text-primary font-medium"> Federal University of Technology, Owerri (FUTO)</span>.
-            Originally from <span className="text-primary font-medium">Umuahia, Abia State, Nigeria</span>,
+            <a
+              href="https://futo.edu.ng"
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary font-medium underline decoration-primary/30 hover:decoration-primary underline-offset-4 transition-colors"
+            >
+              {" "}Federal University of Technology, Owerri (FUTO)
+            </a>.
+            Originally from{" "}
+            <a
+              href="https://abiastate.gov.ng"
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary font-medium underline decoration-primary/30 hover:decoration-primary underline-offset-4 transition-colors"
+            >
+              Umuahia, Abia State
+            </a>, Nigeria,
             I've spent the last 3 years honing my skills in frontend development and API engineering.
           </p>
           <p>

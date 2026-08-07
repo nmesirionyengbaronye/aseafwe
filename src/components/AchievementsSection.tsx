@@ -1,33 +1,80 @@
 import { motion } from "framer-motion";
-import { Award, Trophy, Sparkles, ExternalLink, Users, Globe } from "lucide-react";
+import { Award, Trophy, Sparkles, ExternalLink, User, Timer, Mic } from "lucide-react";
 import certificate from "@/assets/hacknation-certificate.webp";
+
+const InstLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    className="text-primary font-medium underline decoration-primary/30 hover:decoration-primary underline-offset-4 transition-colors"
+  >
+    {children}
+  </a>
+);
+
+const sponsors = [
+  { name: "ElevenLabs", url: "https://elevenlabs.io" },
+  { name: "Databricks", url: "https://www.databricks.com" },
+  { name: "RealPage", url: "https://www.realpage.com" },
+  { name: "Maschmeyer Group", url: "https://www.maschmeyer-group.de" },
+];
 
 const highlights = [
   {
     icon: Trophy,
     title: "Creativity Recognition",
-    detail:
-      "Recognised for creative problem-solving at the 6th Hack-Nation Global AI Hackathon (July 18–19, 2026) for RIE — Resistance Intelligence Engine.",
+    detail: (
+      <>
+        Recognised for creativity of concept and execution at the 6th{" "}
+        <InstLink href="https://hack-nation.ai">Hack-Nation</InstLink> Global AI
+        Hackathon (July 18–19, 2026) for RIE — Resistance Intelligence Engine.
+      </>
+    ),
   },
   {
-    icon: Globe,
-    title: "Global AI Hackathon",
-    detail:
-      "Competed in a worldwide, 48-hour AI build sprint backed by ElevenLabs, Databricks, RealPage and the Maschmeyer Group.",
+    icon: User,
+    title: "Solo Build",
+    detail: (
+      <>
+        Designed, built and shipped the entire project solo — architecture, AI
+        pipeline, frontend and integration — with no team to split the work.
+      </>
+    ),
   },
   {
-    icon: Users,
-    title: "Team Delivery Under Pressure",
-    detail:
-      "Shipped a working AI product and live pitch inside two days — architecture, frontend, and API integration end to end.",
+    icon: Timer,
+    title: "24-Hour Sprint",
+    detail: (
+      <>
+        Delivered a working product inside a single 24-hour window, competing
+        against global teams while studying at{" "}
+        <InstLink href="https://futo.edu.ng">FUTO</InstLink>, Owerri.
+      </>
+    ),
+  },
+  {
+    icon: Mic,
+    title: "Live Pitch — Community Chosen",
+    detail: (
+      <>
+        Selected by the community to pitch live to judges and mentors, presenting
+        the concept and demo on stage during the finals.
+      </>
+    ),
   },
   {
     icon: Sparkles,
     title: "AI Engineering Depth",
-    detail:
-      "Applied NLP, model orchestration and real-time data pipelines to a novel intelligence-engine concept judged by industry mentors.",
+    detail: (
+      <>
+        Applied NLP, model orchestration and real-time data pipelines to a novel
+        intelligence-engine concept judged by industry mentors.
+      </>
+    ),
   },
 ];
+
 
 const AchievementsSection = () => (
   <section id="achievements" className="py-28 px-6 md:px-12 lg:px-24">
@@ -93,10 +140,41 @@ const AchievementsSection = () => (
               RIE — Resistance Intelligence Engine
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Built and pitched an AI intelligence engine during Hack-Nation&apos;s
-              global hackathon alongside builders from around the world, and was
-              recognised for the creativity of the concept and execution.
+              A solo build shipped in 24 hours at{" "}
+              <InstLink href="https://hack-nation.ai">Hack-Nation</InstLink>&apos;s
+              Global AI Hackathon, pitched live after being chosen by the
+              community, and recognised for the creativity of the concept and
+              execution. Built while studying Mechatronics Engineering at{" "}
+              <InstLink href="https://futo.edu.ng">
+                Federal University of Technology, Owerri (FUTO)
+              </InstLink>
+              , originally from{" "}
+              <InstLink href="https://abiastate.gov.ng">Abia State</InstLink>,
+              Nigeria.
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-8"
+          >
+            <p className="font-mono text-xs text-primary mb-3">Sponsored by:</p>
+            <div className="flex flex-wrap gap-2">
+              {sponsors.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-mono text-xs text-primary/80 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full hover:border-primary/60 hover:bg-primary/20 transition-colors"
+                >
+                  {s.name}
+                </a>
+              ))}
+            </div>
           </motion.div>
 
           <div className="space-y-5">
