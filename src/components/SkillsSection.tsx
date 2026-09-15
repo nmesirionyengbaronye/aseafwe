@@ -16,6 +16,7 @@ import {
   Palette,
   Radio,
   Server,
+  Send,
   Sparkles,
   Terminal,
   Wrench,
