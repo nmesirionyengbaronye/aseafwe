@@ -5,9 +5,9 @@ import { jsPDF } from "jspdf";
 import profileImg from "@/assets/profile.jpg";
 
 const socials = [
-  { icon: Github, href: "https://github.com/Panther0508", label: "GitHub" },
+  { icon: Github, href: "https://github.com/nmesirionyenmgbaronye", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/ngbaronye-nmesirionye-31339b410/", label: "LinkedIn" },
-  { icon: Twitter, href: "https://x.com/Pantherlord0508", label: "X" },
+  { icon: Twitter, href: "https://x.com/nmesirionye_", label: "X" },
   { icon: Mail, href: "mailto:nmesirionyengbaronye@gmail.com", label: "Email" },
 ];
 
@@ -105,7 +105,7 @@ const generateCV = () => {
   doc.setFont("helvetica", "bold");
   doc.setFontSize(23);
   doc.setTextColor(255, 255, 255);
-  doc.text("NGBARONYE NMESIRIONYE", W / 2, 14, { align: "center" });
+  doc.text("NMESIRIONYE NGBARONYE", W / 2, 14, { align: "center" });
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
   doc.setTextColor(212, 175, 55);
@@ -124,7 +124,7 @@ const generateCV = () => {
     { align: "center" },
   );
   doc.text(
-    "linkedin.com/in/ngbaronye-nmesirionye-31339b410  |  github.com/Panther0508  |  x.com/Pantherlord0508",
+    "linkedin.com/in/ngbaronye-nmesirionye-31339b410  |  github.com/nmesirionyenmgbaronye  |  x.com/nmesirionye_",
     W / 2,
     31,
     { align: "center" },
@@ -186,7 +186,7 @@ const generateCV = () => {
   bullet("Served ML models behind FastAPI/Flask endpoints consumed by React frontends, with streaming responses and context retention across sessions.");
   y += 2;
 
-  roleHeader("Open Source Contributor", "GitHub - github.com/Panther0508", "2023 - Present");
+  roleHeader("Open Source Contributor", "GitHub - github.com/nmesirionyenmgbaronye", "2023 - Present");
   bullet("Contribute pull requests for bug fixes, features and documentation across community repositories; participate in code review with distributed teams.");
   bullet("Maintain personal open-source repositories with clear READMEs, issue triage and reproducible setup instructions.");
 
@@ -205,7 +205,7 @@ const generateCV = () => {
     {
       name: "HallsSports FUTO - Stadium & Hall Booking Platform",
       meta: "React, TypeScript, Tailwind CSS, Vercel",
-      link: "hallssports-futo.vercel.app  |  github.com/Panther0508/spark-stadium-builder",
+      link: "hallssports-futo.vercel.app  |  github.com/nmesirionyenmgbaronye/spark-stadium-builder",
       bullets: [
         "Built a campus sports facility booking platform replacing informal chat-based reservations with slot-based online booking.",
         "Mobile-first responsive interface with facility catalogue, availability states and confirmation flows.",
@@ -301,11 +301,11 @@ const generateCV = () => {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(7.5);
     doc.setTextColor(...MUTED);
-    doc.text("Ngbaronye Nmesirionye - Curriculum Vitae", M, H - 8);
+    doc.text("Nmesirionye Ngbaronye - Curriculum Vitae", M, H - 8);
     doc.text(`Page ${i} of ${pages}`, W - M, H - 8, { align: "right" });
   }
 
-  doc.save("Ngbaronye_Nmesirionye_CV.pdf");
+  doc.save("Nmesirionye_Ngbaronye_CV.pdf");
 };
 
 
@@ -416,7 +416,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight"
           >
-            Ngbaronye Nmesirionye.
+            Nmesirionye Nmesirionye.
           </motion.h1>
 
           <motion.div
@@ -496,7 +496,7 @@ const HeroSection = () => {
             />
             <img
               src={profileImg}
-              alt="Ngbaronye Nmesirionye - Frontend & API Developer"
+              alt="Nmesirionye Ngbaronye - Frontend & API Developer"
               className="relative rounded-full w-full h-full object-cover object-top border-4 border-primary/30 shadow-[var(--shadow-glow)]"
             />
           </div>

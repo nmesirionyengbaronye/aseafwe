@@ -1,9 +1,9 @@
 import { Github, Twitter, Mail, Linkedin } from "lucide-react";
 
 const socials = [
-  { icon: Github, href: "https://github.com/Panther0508" },
+  { icon: Github, href: "https://github.com/nmesirionyenmgbaronye" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/ngbaronye-nmesirionye-31339b410/" },
-  { icon: Twitter, href: "https://x.com/Pantherlord0508" },
+  { icon: Twitter, href: "https://x.com/nmesirionye_" },
   { icon: Mail, href: "mailto:nmesirionyengbaronye@gmail.com" },
 ];
 
@@ -27,7 +27,7 @@ const Footer = () => (
       <div className="h-px w-16 bg-primary/20" />
       <p className="font-mono text-xs text-muted-foreground">
         Designed & Built by{" "}
-        <span className="text-primary/80">Ngbaronye Nmesirionye</span>
+        <span className="text-primary/80">Nmesirionye Ngbaronye</span>
       </p>
     </div>
   </footer>

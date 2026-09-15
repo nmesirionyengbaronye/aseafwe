@@ -58,7 +58,7 @@ type QAEntry = {
 const qaData: QAEntry[] = [
   {
     keywords: ["who", "about", "name", "introduce", "yourself"],
-    answer: "I'm Ngbaronye Nmesirionye — a Frontend & API Developer and Mechatronics Engineering student at FUTO. I have 3 years of experience building web apps and APIs.",
+    answer: "I'm Nmesirionye Ngbaronye — a Frontend & API Developer and Mechatronics Engineering student at FUTO. I have 3 years of experience building web apps and APIs.",
     action: () => scrollToSection("about"),
     actionLabel: "Go to About section",
   },
@@ -82,7 +82,7 @@ const qaData: QAEntry[] = [
   },
   {
     keywords: ["contact", "email", "reach", "hire", "freelance", "message"],
-    answer: "You can reach me at nmesirionyengbaronye@gmail.com, WhatsApp (07040369525), GitHub (Panther0508), or X (@Pantherlord0508). I'll take you to the contact section!",
+    answer: "You can reach me at nmesirionyengbaronye@gmail.com, WhatsApp (07040369525), GitHub (nmesirionyenmgbaronye), or X (@nmesirionye_). I'll take you to the contact section!",
     action: () => scrollToSection("contact"),
     actionLabel: "Go to Contact section",
   },
@@ -96,7 +96,7 @@ const qaData: QAEntry[] = [
   },
   {
     keywords: ["github", "code", "repository", "repo"],
-    answer: "Check out my GitHub at github.com/Panther0508 — all my open source projects are there!",
+    answer: "Check out my GitHub at github.com/nmesirionyenmgbaronye — all my open source projects are there!",
   },
   {
     keywords: ["available", "open", "opportunity"],
@@ -117,7 +117,7 @@ const qaData: QAEntry[] = [
   },
   {
     keywords: ["hello", "hi", "hey", "greet", "sup", "yo"],
-    answer: "Hey there! 👋 I'm the assistant on Ngbaronye's portfolio. Ask me anything about his skills, projects, or how to get in touch! Try the quick actions below.",
+    answer: "Hey there! 👋 I'm the assistant on Nmesirionye's portfolio. Ask me anything about his skills, projects, or how to get in touch! Try the quick actions below.",
   },
   {
     keywords: ["thank", "thanks", "nice", "cool", "awesome", "great"],
@@ -142,7 +142,7 @@ const findAnswer = (input: string): { answer: string; action?: () => void; actio
 const ChatBot = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: "Hey! 👋 I'm Ngbaronye's portfolio assistant. Ask me about his skills, projects, or how to get in touch — or use the quick actions below!" },
+    { role: "assistant", content: "Hey! 👋 I'm Nmesirionye's portfolio assistant. Ask me about his skills, projects, or how to get in touch — or use the quick actions below!" },
   ]);
   const [input, setInput] = useState("");
   const [showQuickActions, setShowQuickActions] = useState(true);
