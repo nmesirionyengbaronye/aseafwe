@@ -416,7 +416,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight"
           >
-            Nmesirionye Nmesirionye.
+            Nmesirionye Ngbaronye.
           </motion.h1>
 
           <motion.div

@@ -28,7 +28,7 @@ const AboutSection = () => (
       <div className="flex flex-col md:flex-row gap-10 items-start">
         <div className="text-muted-foreground leading-relaxed space-y-4 text-base flex-1">
           <p>
-            Hello! I'm Nmesirionye Nmesirionye, a passionate developer and Mechatronics Engineering student at the
+            Hello! I'm Nmesirionye Ngbaronye, a passionate developer and Mechatronics Engineering student at the
             <a
               href="https://futo.edu.ng"
               target="_blank"
