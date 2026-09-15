@@ -27,7 +27,7 @@ const Navbar = () => {
       >
         <a href="#" className="flex items-center gap-2">
           <Avatar className="h-8 w-8">
-            <AvatarImage src={profileImg} alt="Ngbaronye Nmesirionye" />
+            <AvatarImage src={profileImg} alt="Nmesirionye Ngbaronye" />
             <AvatarFallback>NN</AvatarFallback>
           </Avatar>
           <span className="font-mono text-primary text-sm font-bold tracking-wider">

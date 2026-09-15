@@ -1,12 +1,78 @@
 import { motion } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Monitor, Server, Wrench, Bot } from "lucide-react";
+import {
+  Bot,
+  Box,
+  Braces,
+  CircuitBoard,
+  Code2,
+  Container,
+  Cpu,
+  Database,
+  FileCode2,
+  GitBranch,
+  Layers,
+  Monitor,
+  Palette,
+  Radio,
+  Server,
+  Send,
+  Sparkles,
+  Terminal,
+  Wrench,
+  Zap,
+} from "lucide-react";
 
 const skills = [
-  { category: "Frontend", icon: Monitor, items: ["React", "TypeScript", "Tailwind CSS", "Next.js", "HTML/CSS", "Framer Motion"] },
-  { category: "API & Backend", icon: Server, items: ["Python", "Node.js", "Express", "REST APIs", "GraphQL", "PostgreSQL", "MongoDB"] },
-  { category: "Tools & DevOps", icon: Wrench, items: ["Git", "Docker", "CI/CD", "Vite", "Figma", "Postman"] },
-  { category: "Robotics", icon: Bot, items: ["Arduino", "Raspberry Pi", "Embedded C", "Sensors & Actuators", "PCB Design", "3D Printing"] },
+  {
+    category: "Frontend",
+    icon: Monitor,
+    items: [
+      { name: "React", icon: Code2 },
+      { name: "TypeScript", icon: Braces },
+      { name: "Tailwind CSS", icon: Palette },
+      { name: "Next.js", icon: Layers },
+      { name: "HTML/CSS", icon: FileCode2 },
+      { name: "Framer Motion", icon: Sparkles },
+    ],
+  },
+  {
+    category: "API & Backend",
+    icon: Server,
+    items: [
+      { name: "Python", icon: Terminal },
+      { name: "Node.js", icon: Zap },
+      { name: "Express", icon: Server },
+      { name: "REST APIs", icon: Radio },
+      { name: "GraphQL", icon: Braces },
+      { name: "PostgreSQL", icon: Database },
+      { name: "MongoDB", icon: Box },
+    ],
+  },
+  {
+    category: "Tools & DevOps",
+    icon: Wrench,
+    items: [
+      { name: "Git", icon: GitBranch },
+      { name: "Docker", icon: Container },
+      { name: "CI/CD", icon: Zap },
+      { name: "Vite", icon: Sparkles },
+      { name: "Figma", icon: Palette },
+      { name: "Postman", icon: Send },
+    ],
+  },
+  {
+    category: "Robotics",
+    icon: Bot,
+    items: [
+      { name: "Arduino", icon: CircuitBoard },
+      { name: "Raspberry Pi", icon: Cpu },
+      { name: "Embedded C", icon: Code2 },
+      { name: "Sensors & Actuators", icon: Radio },
+      { name: "PCB Design", icon: CircuitBoard },
+      { name: "3D Printing", icon: Box },
+    ],
+  },
 ];
 
 const skillItem = {
@@ -63,17 +129,22 @@ const SkillsSection = () => (
               <ul className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {group.items.map((skill, i) => (
                   <motion.li
-                    key={skill}
+                    key={skill.name}
                     custom={i}
                     variants={skillItem}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    whileHover={{ x: 4 }}
-                    className="flex items-center gap-2 text-muted-foreground text-sm p-2 rounded hover:bg-primary/5 transition-colors cursor-default"
+                    whileHover={{ x: 4, y: -4, rotateX: -5, rotateY: 5 }}
+                    className="group/skill flex items-center gap-3 text-muted-foreground text-sm p-2 rounded hover:bg-primary/5 transition-colors cursor-default [transform-style:preserve-3d]"
                   >
-                    <span className="text-primary text-xs">▹</span>
-                    {skill}
+                    <span className="relative h-11 w-11 shrink-0 [transform-style:preserve-3d]" aria-hidden="true">
+                      <span className="absolute inset-0 translate-x-1 translate-y-1 rounded-md border border-primary/20 bg-primary/10" />
+                      <span className="relative flex h-11 w-11 items-center justify-center rounded-md border border-primary/40 bg-background/90 text-primary shadow-[var(--shadow-glow)] [transform:translateZ(10px)] transition-colors group-hover/skill:bg-primary/10">
+                        <skill.icon size={20} strokeWidth={1.7} />
+                      </span>
+                    </span>
+                    <span className="font-medium text-foreground/80 group-hover/skill:text-primary transition-colors">{skill.name}</span>
                   </motion.li>
                 ))}
               </ul>

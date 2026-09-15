@@ -28,7 +28,7 @@ const AboutSection = () => (
       <div className="flex flex-col md:flex-row gap-10 items-start">
         <div className="text-muted-foreground leading-relaxed space-y-4 text-base flex-1">
           <p>
-            Hello! I'm Ngbaronye Nmesirionye, a passionate developer and Mechatronics Engineering student at the
+            Hello! I'm Nmesirionye Ngbaronye, a passionate developer and Mechatronics Engineering student at the
             <a
               href="https://futo.edu.ng"
               target="_blank"
@@ -98,7 +98,7 @@ const AboutSection = () => (
           <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 rounded-lg blur-sm" />
           <img
             src={profileImg}
-            alt="Ngbaronye Nmesirionye"
+            alt="Nmesirionye Ngbaronye"
             className="relative rounded-lg w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500 border border-primary/20"
           />
         </div>
