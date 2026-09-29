@@ -1,4 +1,4 @@
-- [ ] Update the portfolio name order to Nmesirionye Ngbaronye
-- [ ] Replace GitHub and X usernames everywhere, including project repository links
-- [ ] Replace text-only skills with animated 3D-style skill icons
-- [ ] Verify the updated public links and skills section in the preview
+- [x] Update the portfolio name order to Nmesirionye Ngbaronye
+- [x] Replace GitHub and X usernames everywhere, including project repository links
+- [x] Replace text-only skills with animated 3D-style skill icons
+- [x] Verify the updated public links and skills section in the preview
