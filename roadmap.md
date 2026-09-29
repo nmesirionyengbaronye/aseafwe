@@ -2,3 +2,5 @@
 - [x] Replace GitHub and X usernames everywhere, including project repository links
 - [x] Replace text-only skills with animated 3D-style skill icons
 - [x] Verify the updated public links and skills section in the preview
+- [x] Add Google site-verification file and basic indexing files (robots.txt, sitemap.xml)
+- [x] Set the portfolio’s canonical and social URL to its published project URL
