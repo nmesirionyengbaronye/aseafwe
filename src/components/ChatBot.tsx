@@ -82,7 +82,7 @@ const qaData: QAEntry[] = [
   },
   {
     keywords: ["contact", "email", "reach", "hire", "freelance", "message"],
-    answer: "You can reach me at nmesirionyengbaronye@gmail.com, WhatsApp (07040369525), GitHub (nmesirionyenmgbaronye), or X (@nmesirionye_). I'll take you to the contact section!",
+    answer: "You can reach me at nmesirionyengbaronye@gmail.com, WhatsApp (07040369525), GitHub (nmesrionyengbaronye), or X (@nmesirionye_n). I'll take you to the contact page!",
     action: () => scrollToSection("contact"),
     actionLabel: "Go to Contact section",
   },
@@ -96,7 +96,7 @@ const qaData: QAEntry[] = [
   },
   {
     keywords: ["github", "code", "repository", "repo"],
-    answer: "Check out my GitHub at github.com/nmesirionyenmgbaronye — all my open source projects are there!",
+    answer: "Check out my GitHub at github.com/nmesrionyengbaronye — all my open source projects are there!",
   },
   {
     keywords: ["available", "open", "opportunity"],

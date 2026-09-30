@@ -3,11 +3,13 @@ import { Github, Mail, ArrowDown, Twitter, Download, Eye, Linkedin } from "lucid
 import { useState, useEffect, useCallback } from "react";
 import { jsPDF } from "jspdf";
 import profileImg from "@/assets/profile.jpg";
+import { Link } from "react-router-dom";
+import { site } from "@/lib/site";
 
 const socials = [
-  { icon: Github, href: "https://github.com/nmesirionyenmgbaronye", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/ngbaronye-nmesirionye-31339b410/", label: "LinkedIn" },
-  { icon: Twitter, href: "https://x.com/nmesirionye_", label: "X" },
+  { icon: Github, href: site.social.github, label: "GitHub" },
+  { icon: Linkedin, href: site.social.linkedin, label: "LinkedIn" },
+  { icon: Twitter, href: site.social.x, label: "X" },
   { icon: Mail, href: "mailto:nmesirionyengbaronye@gmail.com", label: "Email" },
 ];
 
@@ -124,7 +126,7 @@ const generateCV = () => {
     { align: "center" },
   );
   doc.text(
-    "linkedin.com/in/ngbaronye-nmesirionye-31339b410  |  github.com/nmesirionyenmgbaronye  |  x.com/nmesirionye_",
+    "linkedin.com/in/ngbaronye-nmesirionye-31339b410  |  github.com/nmesrionyengbaronye  |  x.com/nmesirionye_n",
     W / 2,
     31,
     { align: "center" },
@@ -186,7 +188,7 @@ const generateCV = () => {
   bullet("Served ML models behind FastAPI/Flask endpoints consumed by React frontends, with streaming responses and context retention across sessions.");
   y += 2;
 
-  roleHeader("Open Source Contributor", "GitHub - github.com/nmesirionyenmgbaronye", "2023 - Present");
+  roleHeader("Open Source Contributor", "GitHub - github.com/nmesrionyengbaronye", "2023 - Present");
   bullet("Contribute pull requests for bug fixes, features and documentation across community repositories; participate in code review with distributed teams.");
   bullet("Maintain personal open-source repositories with clear READMEs, issue triage and reproducible setup instructions.");
 
@@ -205,7 +207,7 @@ const generateCV = () => {
     {
       name: "HallsSports FUTO - Stadium & Hall Booking Platform",
       meta: "React, TypeScript, Tailwind CSS, Vercel",
-      link: "hallssports-futo.vercel.app  |  github.com/nmesirionyenmgbaronye/spark-stadium-builder",
+      link: "hallssports-futo.vercel.app  |  github.com/nmesrionyengbaronye/spark-stadium-builder",
       bullets: [
         "Built a campus sports facility booking platform replacing informal chat-based reservations with slot-based online booking.",
         "Mobile-first responsive interface with facility catalogue, availability states and confirmation flows.",
@@ -456,13 +458,13 @@ const HeroSection = () => {
             transition={{ delay: 1.0, duration: 0.6 }}
             className="flex flex-wrap gap-4 mt-10"
           >
-            <a
-              href="#projects"
+            <Link
+              to="/work"
               className="inline-flex items-center gap-2 font-mono text-sm border border-primary text-primary px-7 py-4 rounded hover:bg-primary/10 transition-colors"
             >
               Check out my work
               <ArrowDown size={16} />
-            </a>
+            </Link>
             <button
               onClick={handleDownloadCV}
               data-cv-download

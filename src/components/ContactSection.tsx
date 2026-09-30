@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Github, Twitter, Send, Sparkles, Linkedin } from "lucide-react";
+import { Mail, MessageCircle, Github, Twitter, Send, Sparkles, Linkedin, BookOpen, Newspaper, Code2 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { site } from "@/lib/site";
 
 const templates = [
   {
@@ -21,9 +22,12 @@ const contacts = [
   { label: "Email", icon: Mail, value: "nmesirionyengbaronye@gmail.com", href: "mailto:nmesirionyengbaronye@gmail.com", cta: "Send Email", hasTemplates: true },
   { label: "WhatsApp", icon: MessageCircle, value: "07040369525", href: "https://wa.me/2347040369525", cta: "Chat on WhatsApp", hasTemplates: true },
   { label: "Telegram", icon: Send, value: "07040369525", href: "https://t.me/+2347040369525", cta: "Chat on Telegram", hasTemplates: false },
-  { label: "GitHub", icon: Github, value: "nmesirionyenmgbaronye", href: "https://github.com/nmesirionyenmgbaronye", cta: "Visit GitHub", hasTemplates: false },
+  { label: "GitHub", icon: Github, value: "nmesrionyengbaronye", href: site.social.github, cta: "Visit GitHub", hasTemplates: false },
   { label: "LinkedIn", icon: Linkedin, value: "ngbaronye-nmesirionye", href: "https://www.linkedin.com/in/ngbaronye-nmesirionye-31339b410/", cta: "Connect on LinkedIn", hasTemplates: false },
-  { label: "X", icon: Twitter, value: "@nmesirionye_", href: "https://x.com/nmesirionye_", cta: "Visit X", hasTemplates: false },
+  { label: "X", icon: Twitter, value: "@nmesirionye_n", href: site.social.x, cta: "Visit X", hasTemplates: false },
+  { label: "Hashnode", icon: Code2, value: "nmesrionyengbaronye", href: site.social.hashnode, cta: "Read on Hashnode", hasTemplates: false },
+  { label: "Medium", icon: Newspaper, value: "@nmesrionyengbaronye", href: site.social.medium, cta: "Read on Medium", hasTemplates: false },
+  { label: "DEV", icon: BookOpen, value: "nmesrionyengbaronye", href: site.social.devto, cta: "Read on DEV", hasTemplates: false },
 
 ];
 

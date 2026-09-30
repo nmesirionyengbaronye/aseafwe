@@ -3,4 +3,10 @@
   <url>
     <loc>https://aseafwe.lovable.app/</loc>
   </url>
+  <url><loc>https://aseafwe.lovable.app/about</loc></url>
+  <url><loc>https://aseafwe.lovable.app/work</loc></url>
+  <url><loc>https://aseafwe.lovable.app/skills</loc></url>
+  <url><loc>https://aseafwe.lovable.app/achievements</loc></url>
+  <url><loc>https://aseafwe.lovable.app/writing</loc></url>
+  <url><loc>https://aseafwe.lovable.app/contact</loc></url>
 </urlset>
