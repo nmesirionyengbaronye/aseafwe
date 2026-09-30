@@ -1,30 +1,20 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import SkillsSection from "@/components/SkillsSection";
-import CompletedProjectsSection from "@/components/CompletedProjectsSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import AchievementsSection from "@/components/AchievementsSection";
-import ContactSection from "@/components/ContactSection";
-
 import Footer from "@/components/Footer";
 import SpaceBackground from "@/components/SpaceBackground";
 import ChatBot from "@/components/ChatBot";
+import HomeOverview from "@/components/HomeOverview";
+import PageMeta from "@/components/PageMeta";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative">
       <SpaceBackground />
+      <PageMeta title="Frontend & API Developer" description="Portfolio of Nmesirionye Ngbaronye, a frontend and API developer building polished web products, APIs and AI applications." path="/" />
       <div className="relative z-10">
         <Navbar />
         <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <CompletedProjectsSection />
-        <ProjectsSection />
-        <AchievementsSection />
-        <ContactSection />
-
+        <HomeOverview />
         <Footer />
       </div>
       <ChatBot />

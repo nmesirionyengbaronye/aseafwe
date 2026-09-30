@@ -4,3 +4,8 @@
 - [x] Verify the updated public links and skills section in the preview
 - [x] Add Google site-verification file and basic indexing files (robots.txt, sitemap.xml)
 - [x] Set the portfolio’s canonical and social URL to its published project URL
+- [x] Standardize X and creator-account usernames across the portfolio and CV
+- [x] Add dedicated About, Work, Achievements, Skills, Contact, and Writing pages
+- [x] Replace one-page anchor navigation with real page navigation
+- [x] Update the sitemap for every new public page
+- [ ] Verify the new pages and account links in desktop and mobile preview
