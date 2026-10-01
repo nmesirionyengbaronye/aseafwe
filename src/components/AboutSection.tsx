@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
 import profileImg from "@/assets/profile.jpg";
-import { Code2, Cpu, Globe, Rocket } from "lucide-react";
+import { Code2, Cpu, Globe, Rocket, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { site } from "@/lib/site";
 
 const highlights = [
-  { label: "Experience", value: "3 Years", icon: Code2 },
-  { label: "University", value: "FUTO (Mechatronics)", icon: Cpu },
+  { label: "Discipline", value: "Mechatronics Eng.", icon: Cpu },
+  { label: "Focus", value: "AI & Mechatronics", icon: Code2 },
   { label: "Location", value: "Nigeria", icon: Globe },
   { label: "Origin", value: "Umuahia, Abia", icon: Rocket },
 ];
 
-const techStack = ["React", "TypeScript", "Node.js", "Python", "Arduino", "Docker"];
+const techStack = ["Python", "React", "TypeScript", "Node.js", "Arduino", "Docker"];
 
 const AboutSection = () => (
   <section id="about" className="py-24 px-6 md:px-12 lg:px-24 max-w-5xl mx-auto">
@@ -45,17 +47,51 @@ const AboutSection = () => (
               className="text-primary font-medium underline decoration-primary/30 hover:decoration-primary underline-offset-4 transition-colors"
             >
               Umuahia, Abia State
-            </a>, Nigeria,
-            I've spent the last 3 years honing my skills in frontend development and API engineering.
+            </a>, Nigeria. I work at the seam between two disciplines: I build
+            applied AI systems — NLP pipelines, retrieval, verification — and the web
+            platforms that put them in front of people.
           </p>
           <p>
-            I love working at the intersection of design and engineering — taking ideas from concept to a fully functional product.
-            Whether it's a responsive web app or a RESTful API, I care deeply about performance, code quality, and user experience.
+            My degree is Mechatronics Engineering, which is where the embedded and
+            control side comes from. What I actually spend most of my time on is applied
+            AI: retrieval infrastructure, verification, NLP pipelines — and the frontend
+            work required to make any of it usable. UniUI is where both meet.
           </p>
           <p>
-            When I'm not coding, you can find me exploring new technologies, contributing to open-source,
-            tinkering with robotics projects, or learning about system design and cloud architecture.
+            When I'm not building, I'm writing about it in the journal, or pushing on
+            robotics and embedded work where the engineering is physical rather than
+            purely digital.
           </p>
+
+          {/* Cross-links to the rest of the portfolio */}
+          <div className="pt-4">
+            <p className="font-mono text-primary text-xs mb-3">Keep reading</p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                ["Timeline", "/timeline"],
+                ["Philosophy", "/philosophy"],
+                ["Education", "/education"],
+                ["Work", "/work"],
+                ["Now", "/now"],
+              ].map(([label, href]) => (
+                <Link
+                  key={href}
+                  to={href}
+                  className="font-mono text-xs border border-primary/30 text-primary/80 bg-primary/5 px-3 py-1.5 rounded-full hover:border-primary/60 hover:bg-primary/10 transition-colors"
+                >
+                  {label}
+                </Link>
+              ))}
+              <a
+                href={site.journalUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 font-mono text-xs border border-primary/30 text-primary/80 bg-primary/5 px-3 py-1.5 rounded-full hover:border-primary/60 hover:bg-primary/10 transition-colors"
+              >
+                Journal<ExternalLink size={11} />
+              </a>
+            </div>
+          </div>
 
           {/* Tech I work with */}
           <div className="pt-4">

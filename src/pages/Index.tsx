@@ -1,16 +1,30 @@
-import Navbar from "@/components/Navbar";
+import { lazy, Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
-import Footer from "@/components/Footer";
-import SpaceBackground from "@/components/SpaceBackground";
-import ChatBot from "@/components/ChatBot";
 import HomeOverview from "@/components/HomeOverview";
-import PageMeta from "@/components/PageMeta";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
+import PageMeta, { StructuredData } from "@/components/PageMeta";
+import { site } from "@/lib/site";
+
+/**
+ * three.js is only needed for the decorative starfield. Loading it lazily
+ * keeps ~800 kB off the critical path while the hero copy paints first.
+ */
+const SpaceBackground = lazy(() => import("@/components/SpaceBackground"));
 
 const Index = () => {
   return (
     <div className="min-h-screen relative">
-      <SpaceBackground />
-      <PageMeta title="Frontend & API Developer" description="Portfolio of Nmesirionye Ngbaronye, a frontend and API developer building polished web products, APIs and AI applications." path="/" />
+      <Suspense fallback={null}>
+        <SpaceBackground />
+      </Suspense>
+      <PageMeta
+        title={site.role}
+        description="Portfolio of Nmesirionye Ngbaronye, an AI and Mechatronics Engineer building applied AI systems and web platforms, and a Mechatronics Engineering undergraduate at FUTO, Owerri."
+        path="/"
+      />
+      <StructuredData />
       <div className="relative z-10">
         <Navbar />
         <HeroSection />

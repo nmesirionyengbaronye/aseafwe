@@ -1,164 +1,83 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, CheckCircle, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
-
-const clientProjects = [
-  {
-    title: "NachiGold — Agricultural E-Commerce",
-    industry: "Agriculture / Retail",
-    description: "A wholesale and retail agricultural products platform for NachiGold, featuring poultry, dairy, and farm produce catalogs with WhatsApp-based ordering and nationwide delivery.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
-    status: "Delivered",
-    link: "https://peaceful-nachi.vercel.app/",
-  },
-  {
-    title: "HallsSports FUTO — Facility Booking",
-    industry: "Sports / Campus Facilities",
-    description: "A live sports hall and stadium booking platform for FUTO, letting students and organisers browse facilities, check availability and reserve slots without the usual double-booking chaos.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
-    status: "Delivered",
-    link: "https://hallssports-futo.vercel.app/home",
-  },
-  {
-    title: "E.V.Eel Electronics — Gadget Store",
-    industry: "Electronics / E-Commerce",
-    description: "A product catalog and storefront for a trusted electronics dealer in Onitsha, featuring audio equipment, gadgets, and WhatsApp-integrated ordering.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
-    status: "Delivered",
-    link: "https://e-v-eel-electronics.vercel.app/",
-  },
-  {
-    title: "Obuasi Store Room — Comfort Haven",
-    industry: "Furniture / Home & Living",
-    description: "An e-commerce storefront for affordable luxury foams, chairs, and bedding products with pay-on-delivery and fast shipping across Nigeria.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
-    status: "Delivered",
-    link: "https://comfort-haven-eight.vercel.app/",
-  },
-  {
-    title: "Shirt Haven — African Fashion Store",
-    industry: "Fashion / E-Commerce",
-    description: "A curated African fashion marketplace featuring Ankara dresses, Kente styles, Dashiki, accessories, and a style quiz — with loyalty rewards and WhatsApp ordering.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
-    status: "Delivered",
-    link: "https://clothes-stores-one.vercel.app/",
-  },
-  {
-    title: "Salubrity Superior Farms",
-    industry: "Agriculture / Wellness",
-    description: "A premium farm produce and wellness platform showcasing organic crops, livestock, and health-focused agricultural products with direct farm-to-table ordering.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
-    status: "Delivered",
-    link: "https://salubrity-superior-farms.vercel.app/",
-  },
-];
+import { CheckCircle, ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import type { WorkCase } from "@/lib/portfolioContent";
 
 const INITIAL_COUNT = 6;
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.15 } },
-};
+const container = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
+const item = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const CompletedProjectsSection = () => {
+const CompletedProjectsSection = ({ projects }: { projects: WorkCase[] }) => {
   const [showAll, setShowAll] = useState(false);
-  const visible = showAll ? clientProjects : clientProjects.slice(0, INITIAL_COUNT);
+  const visible = showAll ? projects : projects.slice(0, INITIAL_COUNT);
 
   return (
-    <section id="completed-projects" className="py-24 px-6 md:px-12 lg:px-24 max-w-5xl mx-auto">
+    <section id="completed-projects" className="py-20 px-6 md:px-12 lg:px-24 max-w-5xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
+        className="mb-12"
       >
-        <h2 className="flex items-center gap-3 text-2xl md:text-3xl font-bold text-foreground mb-4">
-          <span className="font-mono text-primary text-lg">03.</span>
-          Completed Projects
-          <span className="h-px flex-1 bg-border max-w-xs" />
-        </h2>
-        <p className="text-muted-foreground text-sm mb-12">
-          Real projects delivered for clients. Results that matter.
+        <p className="font-mono text-xs text-primary mb-3">01 / CLIENT WORK</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground">Delivered for clients</h2>
+        <p className="text-muted-foreground text-sm mt-4 max-w-2xl leading-relaxed">
+          Real storefronts and platforms shipped live. Each one has its own page with the brief, the approach and the live link.
         </p>
       </motion.div>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.1 }}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
+      <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.05 }} className="grid md:grid-cols-2 gap-6">
         <AnimatePresence>
           {visible.map((project) => (
-            <motion.div
-              key={project.title}
-              variants={item}
-              layout
-              whileHover={{ y: -4 }}
-              className="group rounded-lg border border-border bg-card p-6 hover:border-primary/40 transition-all duration-300 hover:shadow-[var(--shadow-glow)]"
-              style={{ background: "var(--gradient-card)" }}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <Briefcase size={28} className="text-primary/60" />
-                <div className="flex items-center gap-2">
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                      aria-label="Visit live site"
-                    >
-                      <ExternalLink size={16} />
-                    </a>
-                  )}
-                  <span className="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 px-3 py-1 rounded-full">
-                    <CheckCircle size={10} />
-                    {project.status}
+            <motion.div key={project.slug} variants={item} layout whileHover={{ y: -4 }}>
+              <article className="group h-full rounded-lg border border-border bg-card p-6 flex flex-col hover:border-primary/40 transition-all duration-300 hover:shadow-[var(--shadow-glow)]" style={{ background: "var(--gradient-card)" }}>
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <p className="font-mono text-xs text-primary/70">{project.category}</p>
+                  <span className="inline-flex items-center gap-1.5 font-mono text-[10px] text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 px-2.5 py-1 rounded-full shrink-0">
+                    <CheckCircle size={10} />{project.status}
                   </span>
                 </div>
-              </div>
 
-              <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-1">
-                {project.title}
-              </h3>
-              <p className="font-mono text-xs text-primary/60 mb-3">{project.industry}</p>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-5">{project.description}</p>
+                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <Link to={`/work/${project.slug}`} className="hover:underline">{project.title}</Link>
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mt-3 mb-5 flex-1">{project.summary}</p>
 
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((t) => (
-                  <span key={t} className="font-mono text-xs text-primary/80 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
-                    {t}
-                  </span>
-                ))}
-              </div>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.technologies.map((tech) => (
+                    <span key={tech} className="font-mono text-xs text-primary/80 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-4 border-t border-border">
+                  <Link to={`/work/${project.slug}`} className="inline-flex items-center gap-2 font-mono text-xs text-primary hover:text-primary/80 transition-colors">
+                    Case study<ArrowRight size={13} />
+                  </Link>
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="font-mono text-xs text-muted-foreground hover:text-primary transition-colors">
+                      Live site
+                    </a>
+                  )}
+                  <span className="font-mono text-[10px] text-muted-foreground ml-auto">{project.role}</span>
+                </div>
+              </article>
             </motion.div>
           ))}
         </AnimatePresence>
       </motion.div>
 
-      {clientProjects.length > INITIAL_COUNT && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex justify-center mt-10"
-        >
+      {projects.length > INITIAL_COUNT && (
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="flex justify-center mt-10">
           <button
             onClick={() => setShowAll((prev) => !prev)}
             className="inline-flex items-center gap-2 font-mono text-sm text-primary border border-primary/30 bg-primary/5 hover:bg-primary/10 px-6 py-3 rounded-lg transition-all duration-300"
           >
-            {showAll ? (
-              <>Show Less <ChevronUp size={16} /></>
-            ) : (
-              <>View More ({clientProjects.length - INITIAL_COUNT}) <ChevronDown size={16} /></>
-            )}
+            {showAll ? <>Show less <ChevronUp size={16} /></> : <>View more ({projects.length - INITIAL_COUNT}) <ChevronDown size={16} /></>}
           </button>
         </motion.div>
       )}

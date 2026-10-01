@@ -1,9 +1,15 @@
-import type { ReactNode } from "react";
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SpaceBackground from "@/components/SpaceBackground";
 import ChatBot from "@/components/ChatBot";
-import PageMeta from "@/components/PageMeta";
+import PageMeta, { StructuredData } from "@/components/PageMeta";
+import type { ReactNode } from "react";
+
+/**
+ * The starfield is ~800 kB of three.js. Loading it lazily keeps it off the
+ * critical path so text content paints immediately on every route.
+ */
+const SpaceBackground = lazy(() => import("@/components/SpaceBackground"));
 
 type PageShellProps = {
   children: ReactNode;
@@ -12,10 +18,18 @@ type PageShellProps = {
   path: string;
 };
 
+/**
+ * Shared chrome for every route: meta tags, structured data, background,
+ * navigation, footer and the assistant. The 404 route renders its own shell
+ * in pages/NotFound, so it is wired directly in App rather than here.
+ */
 const PageShell = ({ children, title, description, path }: PageShellProps) => (
   <div className="min-h-screen relative">
     <PageMeta title={title} description={description} path={path} />
-    <SpaceBackground />
+    <StructuredData />
+    <Suspense fallback={null}>
+      <SpaceBackground />
+    </Suspense>
     <div className="relative z-10">
       <Navbar />
       <main>{children}</main>
